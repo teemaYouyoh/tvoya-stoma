@@ -1,0 +1,36 @@
+.socials {
+  a {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+    @include transition(color 0.3s);
+    color: var(--color-white);
+
+    @include hover-focus-visible {
+      @include non-mobile-device {
+        color: var(--color-pink);
+      }
+    }
+
+    @include viewport-desktop {
+      max-width: px-to-rem(28);
+    }
+    @include viewport-tablet {
+      max-width: px-to-rem(18);
+    }
+    @include viewport-phone {
+      max-width: px-to-rem(12);
+    }
+  }
+
+  svg {   
+    width: 100%;
+    height: auto;
+
+    path {
+      fill: currentColor;
+    }
+  }
+}

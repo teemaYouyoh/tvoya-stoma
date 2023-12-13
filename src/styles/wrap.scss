@@ -5,7 +5,8 @@
     --wrap: calc((100vw - 910px) / 2);
   }
   @include viewport-phone {
-    --wrap: calc((100vw - 318px) / 2);
+    // --wrap: calc((100vw - 318px) / 2);
+    --wrap: 3vw;
   }
   
   --wrap: 10.416vw;

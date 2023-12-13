@@ -9,7 +9,6 @@
 @import './settings';
 @import './fonts';
 
-
 @import 'vevet/src/sass/components/scroll/scrollbar';
 @import 'vevet/src/sass/components/loading/preloader';
 
@@ -78,7 +77,7 @@ main .main-wrapper {
   background-color: var(--color-white);
 }
 
-.logo-link {
+.custom-logo-link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -88,11 +87,16 @@ main .main-wrapper {
   cursor: pointer;
   text-decoration: unset;
 
-  @include viewport-tablet-min {
-    max-width: px-to-rem(218);
+  @include viewport-desktop {
+    max-width: px-to-rem(324);
   }
+
+  @include viewport-tablet {
+    max-width: px-to-rem(206);
+  }
+
   @include viewport-phone {
-    max-width: px-to-rem(186);
+    max-width: px-to-rem(62);
   }
 
   img,
@@ -282,12 +286,12 @@ section,
 @import './layout/possibilities';
 @import './layout/news';
 @import './layout/statistic';
-@import './layout/footer-additional';
 
 @import './layout/breadcrumbs';
 @import './layout/search';
 @import './layout/services-main';
 @import './layout/intime-slider';
+@import './layout/socials';
 // @import './layout/banner-inner';
 // @import './layout/about-info';
 // @import './layout/separate';
