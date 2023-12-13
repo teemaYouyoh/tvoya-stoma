@@ -1,0 +1,111 @@
+@import '../base';
+
+.services {
+  
+  //.services__wrapper 
+  &__wrapper {
+    > * + * {
+      @include viewport-tablet-min {
+        margin-top: px-to-rem(42);
+      }
+      @include viewport-phone {
+        margin-top: px-to-rem(36);
+      }
+    }
+  }
+  
+  //.services__title 
+  &__title {
+    @include text-heading-2;
+  }
+  
+  //.services__main 
+  &__main {
+    > * + * {
+      margin-top: px-to-rem(30);
+    }
+  }
+  
+  //.services-slider 
+  &-slider {
+    
+    //.services-slider-controls 
+    &-controls {
+      width: 100%;
+    }
+    
+    //.services-slider-pagination 
+    &-pagination {
+      display: flex;
+      justify-content: center;
+
+      > * + * {
+        margin-left: px-to-rem(8);
+      }
+
+      .swiper-pagination-bullet {
+        @include reset-button;
+        position: relative;
+        z-index: 0;
+
+        width: 100%;
+        max-width: px-to-rem(10);
+        height: px-to-rem(10);
+        border-radius: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        transform: translateZ(0);
+
+        color: var(--color-blue-100);
+
+        &::before {
+          content: '';
+          width: 100%;
+          height: 100%;
+          border-radius: inherit;
+          border: 1px solid currentColor;
+          background-color: var(--color-white);
+
+          @include transition(opacity 0.4s);
+
+          @at-root .services-slider-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active::before {
+            opacity: 0;
+          }
+        }
+
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+
+          width: 100%;
+          height: 100%;
+          border-radius: inherit;
+
+          @include transition(transform 0.4s);
+          transform: translate(-50%, -50%) scale(0);
+          
+          background-color: currentColor;
+          
+          @at-root .services-slider-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active:after {
+            transform: translate(-50%, -50%) scale(1);
+          }
+        }
+      }
+    }
+    
+    //.services-slider__item 
+    &__item {
+      height: 100%;
+    }
+
+    .swiper-slide {
+      height: auto;
+    }
+  }
+}

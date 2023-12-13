@@ -1,0 +1,23 @@
+@import '../base';
+
+.pro-bono-list {
+  @include viewport-desktop {
+    padding: px-to-rem(60) 0;
+  }
+  @include viewport-tablet {
+    padding: px-to-rem(42) 0;
+  }
+  @include viewport-phone {
+    padding: px-to-rem(30) 0;
+  }
+
+  > * + * {
+    margin-top: px-to-rem(60);
+  }
+  
+}
+
+//.pro-bono-date
+.pro-bono-date {
+  margin-top: 0;
+}

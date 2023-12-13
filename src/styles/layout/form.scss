@@ -1,0 +1,265 @@
+@import '../base';
+@import '../mixins/button';
+@import '../mixins/reset';
+@import '../mixins/font-size';
+
+select {
+  display: block;
+  width: 100%;
+  border: unset;
+  border: 2px solid var(--color-theme);
+  padding: px-to-rem(12) 0;
+  outline: none;
+
+  font-family: $font-family;
+  font-size: px-to-rem(16);
+  line-height: 100%;
+  font-weight: 400;
+  color: var(--color-black);
+  background-color: var(--color-theme);
+
+  &:focus-visible {
+    border-color: var(--color-reverse);
+  }
+
+  @at-root form.invalid select {
+    border-color: var(--color-red);
+  }
+}
+
+input,
+textarea {
+  @include reset-input;
+  appearance: none;
+  outline: none;
+  width: 100%;
+  border: 2px solid var(--color-theme);
+  border-radius: 18px;
+
+  @include viewport-desktop {
+    padding: 13px 16px;
+  }
+  @include viewport-tablet {
+    padding: 6px 20px;
+  }
+  @include viewport-phone {
+    padding: 4px 8px;
+  }
+
+  @include transition(border 0.4s);
+
+  font-family: $font-family;
+  font-size: px-to-rem(16);
+  line-height: 100%;
+  font-weight: 400;
+  color: var(--color-theme);
+
+  &:focus-visible {
+    border-color: var(--color-theme);
+  }
+
+  &:placeholder {
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    color: rgba(var(--color-theme), 0.2);
+  }
+
+  &.hidden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    z-index: -1;
+    visibility: hidden;
+    display: none;
+  }
+
+  @at-root form.invalid input {
+    border-color: var(--color-pink);
+  }
+
+  @at-root form.invalid textarea {
+    border-color: var(--color-pink);
+  }
+}
+
+textarea {
+  @include hide-scroll-bars;
+  resize: none;
+  height: 192px;
+
+  @at-root form.form.action__form textarea {
+    height: px-to-rem(84);
+  }
+  @at-root form.form.contacts__form textarea {
+    height: px-to-rem(84);
+  }
+}
+
+form {
+  position: relative;
+  z-index: 0;
+  text-align: left;
+  color: var(--color-theme);
+
+  &.search__form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    input {
+      width: 100%;
+    }
+
+    > * + * {
+      margin-left: px-to-rem(14);
+    }
+  }
+
+  label {
+    display: block;
+
+    .wpcf7-not-valid-tip {
+      display: none;
+      font-size: px-to-rem(12);
+      color: var(--color-pink);
+
+      @at-root form.invalid label .wpcf7-not-valid-tip {
+        display: block;
+        margin-top: px-to-rem(6);
+      }
+    }
+
+    strong {
+      display: block;
+      margin-bottom: px-to-rem(6);
+
+      font-weight: 400;
+      line-height: 100%;
+      font-size: px-to-rem(16);
+      color: var(--color-theme);
+
+      @at-root form.invalid strong {
+        color: var(--color-pink);
+      }
+    }
+  }
+
+  p {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+
+    a {
+      display: block;
+      color: var(--color-pink);
+
+      @include hover-focus-visible {
+        @include non-mobile-device {
+          text-decoration: unset;
+        }
+      }
+    }
+
+    span {
+      display: block;
+      text-align: center;
+      font-weight: 300;
+      font-size: px-to-rem(12);
+    }
+
+    > * + * {
+      margin-top: px-to-rem(14);
+    }
+  }
+
+  > div {
+    width: 100%;
+    display: grid;
+
+    gap: px-to-rem(32) px-to-rem(36);
+    
+    @include viewport-tablet-min {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include viewport-phone {
+      grid-template-columns: 1fr;
+    }
+
+    @at-root form.form.contacts__form {
+      > div {
+        gap: px-to-rem(30) px-to-rem(42);
+      }
+
+      + * {
+        margin-top: px-to-rem(30);
+      }
+    }
+
+    > * {
+      &:only-child {
+        @include viewport-tablet-min {
+          grid-column: -1 / 1;
+        }
+      }
+    }
+
+    + * {
+      margin-top: px-to-rem(34);
+    }
+  }
+
+  button[type=submit],
+  input[type=submit] {
+    @include button-light;
+
+    background-color: var(--color-reverse);
+
+    &::before,
+    &::after {
+      display: none;
+    }
+
+    @include hover-focus-visible {
+      @include non-mobile-device {
+        color: var(--color-reverse);
+      }
+    }
+
+    @at-root form.search__form button[type="submit"] {
+      flex-shrink: 0;
+      width: px-to-rem(25);
+      height: px-to-rem(25);
+
+      padding: 0;
+
+      color: var(--color-black);
+      background-color: var(--color-white);
+      
+      @include hover-focus-visible {
+        @include non-mobile-device {
+          color: var(--color-pink);
+        }
+      }
+
+      svg {
+        max-width: px-to-rem(20);
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+.form-dark {
+  --color-theme: var(--color-white);
+  --color-reverse: var(--color-black);
+}
+.form-light {
+  --color-theme: var(--color-black);
+  --color-reverse: var(--color-white);
+}

@@ -1,0 +1,48 @@
+.action
+  p.action__title Отримати консультацію
+
+  .action__main
+    form#form-popup.form.action__form(action='post') 
+      //- div
+      //-   label(for='popup-select') 
+      //-     strong Тип звернення
+      //-     select#popup-select(name='select', form='form-popup')
+      //-       option(value='value 1', selected) value 1
+      //-       option(value='value 2') value 2
+      //-       option(value='value 3') value 3
+      //-     span.wpcf7-not-valid-tip Невірний формат
+
+      div
+        label(for='popup-name') 
+          strong Ім’я
+          input#popup-name(type='text', name='name')
+          span.wpcf7-not-valid-tip Невірний формат
+
+        label(for='popup-lastname') 
+          strong Прізвище
+          input#popup-lastname(type='text', name='lastname')
+          span.wpcf7-not-valid-tip Невірний формат
+
+      div
+        label(for='popup-email') 
+          strong Email
+          input#popup-email(type='email', name='email')
+          span.wpcf7-not-valid-tip Невірний формат
+
+        label(for='popup-telephone') 
+          strong Телефон
+          input#popup-telephone(type='tel', name='telephone')
+          span.wpcf7-not-valid-tip Невірний формат
+
+      div
+        label(for='popup-request') 
+          strong Чим ми можемо допомогти
+          textarea#popup-request(name='request')
+          span.wpcf7-not-valid-tip Невірний формат
+
+      p
+        button(type='submit') Відправити
+
+        span Натискаючи на кнопку "Відправити" ви погоджуєтесь з
+          a(href='./document.html', target='_blank', rel='noreferrer') умовами конфіденційності
+          span компанії Persona Patman

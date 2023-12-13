@@ -1,0 +1,16 @@
+.pagination
+  .pagination__container
+    .pagination__wrapper
+      .wp-pagenavi(role='navigation')
+        a.page.smaller(title='Страница 1', href='#') 1
+
+        a.page.smaller(title='Страница 2', href='#') 2
+
+        span.current(aria-current='page') 3
+
+        a.page.larger(title='Страница 4', href='#') 4
+
+        a.page.larger(title='Страница 5', href='#') 5
+
+  .pagination__label
+    img(src=require('@/assets/img/pagination-label.svg'), alt='scroll')

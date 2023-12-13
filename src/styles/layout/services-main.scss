@@ -1,0 +1,115 @@
+@import '../base';
+
+//.services-main
+.services-main {
+
+  //.services-main__wrapper
+  &__wrapper {
+    padding: 0 20px;
+
+    > * + * {
+      margin-top: 64px;
+    }
+  }
+
+  //.services-main__ttile
+  &__title {
+    @include text-heading-2;
+    color: var(--color-pink);
+  }
+
+  //.services-main__list
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  //.services-main__col
+  &__col {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+    &:nth-child(2) {
+      margin: 0 auto;
+
+      @include viewport-desktop {
+        max-width: 398px;
+      }
+    
+      @include viewport-tablet {
+        max-width: 294px;
+      }
+    
+      @include viewport-phone {
+        max-width: 126px;
+      }
+    }
+  }
+
+  //.services-main__item
+  &__item {
+    @at-root .services-main__col:first-child .services-main__item:nth-child(2n+1) {
+      text-align: right;
+    }
+    @at-root .services-main__col:last-child .services-main__item:nth-child(2n+2) {
+      text-align: right;
+    }
+
+    a {
+      font-size: 25px;
+      font-weight: 400;
+      line-height: 30px;
+      color: var(--color-black);
+      text-decoration: none;
+      transition: 0.3s ease;
+
+      &:hover {
+        color: var(--color-pink);
+      }
+
+      &:after {
+        content: "▶";
+        margin-left: 8px;
+        font-size: 18px;
+      }
+    }
+  }
+
+  //.services-main__img
+  &__img img {
+    width: 100%;
+  }
+
+  //.services-main__label
+  &__label {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    line-height: 120%;
+    font-weight: 700;
+    color: var(--color-pink);
+
+    @include viewport-desktop {
+      font-size: 29px;
+    }
+  
+    @include viewport-tablet {
+      font-size: 24px;
+    }
+  
+    @include viewport-phone {
+      font-size: 12px;
+    }
+  }
+}

@@ -1,0 +1,131 @@
+-
+  const footerNavigation = [
+    [
+      {
+        href: './about.html',
+        name: 'Про нас'
+      },
+      {
+        href: './team.html',
+        name: 'Команда'
+      },
+      {
+        href: './partnership.html',
+        name: 'Партнерство'
+      },
+      {
+        href: './pro-bono.html',
+        name: 'Про Боно'
+      },
+      {
+        href: './news.html',
+        name: 'Новини'
+      }
+    ],
+    [
+      {
+        href: './immigration.html',
+        name: 'Імміграція'
+      },
+      {
+        href: './immigration.html',
+        name: 'Легалізація'
+      },
+      {
+        href: './cases.html',
+        name: 'Імміграційні кейси'
+      }
+    ],
+    [
+      {
+        href: './recruting.html',
+        name: 'Рекрутинг'
+      },
+      {
+        href: './recruting.html',
+        name: 'Адаптація'
+      },
+      {
+        href: './cases.html',
+        name: 'Рекрутингові кейси'
+      },
+      {
+        href: './partnership.html',
+        name: 'Наші партнери'
+      }
+    ],
+    [
+      {
+        href: './info-for.html',
+        name: 'Для урядів'
+      },
+      {
+        href: './info-for.html',
+        name: 'Для місцевої влади'
+      },
+      {
+        href: './info-for.html',
+        name: 'Для донорів і NGO'
+      },
+      {
+        href: './info-for.html',
+        name: 'Для банків і фінтеху'
+      },
+      {
+        href: './info-for.html',
+        name: 'Для компаній'
+      },
+      {
+        href: './info-for.html',
+        name: 'Для мігрантів'
+      }
+    ],
+  ];
+
+  const footerLinks = [
+    {
+      href: './document.html',
+      name: 'Terms of Use'
+    },
+    {
+      href: './document.html',
+      name: 'Privacy Policy'
+    },
+    {
+      href: './document.html',
+      name: 'Cookie Policy'
+    },
+    {
+      href: './document.html',
+      name: 'Disclaimer'
+    }
+  ];
+
+footer.footer
+  include @/templates/footer-additional.pug
+
+  ._container.footer__container
+    .footer__wrapper
+      nav.footer-navigation
+        ul.footer-navigation__list
+          each column in footerNavigation
+            li.footer-navigation__li
+              ul.footer-navigation__col
+                each item in column
+                  li.footer-navigation__row
+                    a.footer-navigation__item(href=`${item.href}`)= item.name
+
+      .footer-bottom
+        .footer-bottom__item
+          p.footer__copyright © 2023 Persona Patman LLC&nbsp&nbsp|&nbsp&nbspAll Rights Reserved
+
+        .footer-bottom__item
+          ul.footer-bottom__list
+            each item in footerLinks
+              li.footer-bottom__list__li
+                a.footer-bottom___link(
+                  href=`${item.href}`,
+                  target='_blank',
+                  rel='noreferrer'
+                )= item.name
+

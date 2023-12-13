@@ -1,0 +1,25 @@
+@import '../base';
+
+.immigration-services {
+  
+  //.immigration-services__wrapper 
+  &__wrapper {
+    > * + * {
+      @include viewport-tablet-min {
+        margin-top: px-to-rem(42);
+      }
+      @include viewport-phone {
+        margin-top: px-to-rem(36);
+      }
+    }
+  }
+  
+  //.immigration-services__title 
+  &__title {
+    @include text-heading-2;
+  }
+  
+  //.immigration-services__list 
+  // &__list {
+  // }
+}

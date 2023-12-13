@@ -1,0 +1,125 @@
+@import '../base';
+
+.team {
+  
+  //.team__wrapper 
+  &__wrapper {
+    > * + * {
+      margin-top: px-to-rem(24);
+    }
+  }
+  
+  //.team__title 
+  &__title {
+    @include text-heading-2;
+  }
+  
+  //.team-list 
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(px-to-rem(224), 1fr));
+    gap: px-to-rem(32) px-to-rem(20);
+
+    @include viewport-phone {
+      @media (max-width: 550px) {
+        grid-template-columns: 1fr;
+        gap: px-to-rem(28);
+      }
+    }
+
+    //.team-list__item 
+    &__item {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      text-decoration: unset;
+      color: var(--color-black);
+
+      @include viewport-phone {
+        @media (max-width: 550px) {
+          max-width: 70%;
+        }
+        @media (max-width: 430px) {
+          max-width: unset;
+        }
+      }
+
+      > * + * {
+        margin-top: px-to-rem(4);
+      }
+    }
+    
+    //.team-list__name 
+    &__name {
+      margin-top: px-to-rem(10);
+
+      @include transition(color 0.4s);
+      font-weight: 500;
+      line-height: 150%;
+      font-size: px-to-rem(16);
+
+      @at-root .team-list__item:hover & {
+        @include non-mobile-device {
+          color: var(--color-blue-100);
+        }
+      }
+      @at-root .team-list__item:focus-visible & {
+        @include non-mobile-device {
+          color: var(--color-blue-100);
+        }
+      }
+    }
+    
+    //.team-list__post 
+    &__post {
+      font-weight: 400;
+      line-height: 200%;
+      font-size: px-to-rem(12);
+    }
+  }
+
+  //.team-img 
+  &-img {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    overflow: hidden;
+
+    @include transition(clip-path 0.4s);
+    transform: translateZ(0);
+    clip-path: polygon(18% 0%, 100% 0, 100% 100%, 100% 100%, 0 100%, 0 12%);
+    background-color: var(--color-grey);
+
+    @at-root .team-list__item:hover & {
+      @include non-mobile-device {
+        clip-path: polygon(18% 0%, 100% 0, 100% 88%, 82% 100%, 0 100%, 0 12%);
+      }
+    }
+    @at-root .team-list__item:focus-visible & {
+      @include non-mobile-device {
+        clip-path: polygon(18% 0%, 100% 0, 100% 88%, 82% 100%, 0 100%, 0 12%);
+      }
+    }
+
+    &::after {
+      content: '';
+      @include absolute-fullsize;
+      pointer-events: none;
+      clip-path: polygon(0% 0%, 24% 0%, 0% 16%);
+      background-color: var(--color-blue-100);
+    }
+
+    //.team-img__container 
+    &__container {
+      display: block;
+      padding-top: 116%;
+    }
+
+    img {
+      @include absolute-fullsize;
+      z-index: 0;
+      object-fit: cover;
+    }
+  }
+}

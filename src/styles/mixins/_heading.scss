@@ -1,0 +1,175 @@
+@mixin text-heading-styles {
+  margin: 0;
+  font-family: $font-family-heading;
+  font-weight: 700;
+  line-height: 120%;
+  //color: var(--color-black);
+}
+
+@mixin text-heading-1 {
+  @include text-heading-styles;
+  line-height: 112%;
+  font-weight: 600;
+  word-break: break-word;
+
+  @include viewport-desktop {
+    font-size: px-to-rem(68);
+  }
+
+  @include viewport-tablet {
+    font-size: px-to-rem(64);
+  }
+
+  @include viewport-phone {
+    font-size: px-to-rem(32);
+    line-height: 100%;
+  }
+}
+
+@mixin text-heading-inner-1 {
+  @include text-heading-styles;
+  line-height: 120%;
+  font-weight: 600;
+  word-break: break-word;
+
+  @include viewport-desktop {
+    font-size: px-to-rem(48);
+  }
+
+  @include viewport-tablet {
+    font-size: px-to-rem(46);
+  }
+
+  @include viewport-phone {
+    font-size: px-to-rem(40);
+  }
+}
+
+@mixin text-heading-news-1 {
+  @include text-heading-styles;
+  line-height: 120%;
+  font-weight: 600;
+  word-break: break-word;
+
+  @include viewport-desktop {
+    font-size: px-to-rem(40);
+  }
+
+  @include viewport-tablet {
+    font-size: px-to-rem(38);
+  }
+
+  @include viewport-phone {
+    font-size: px-to-rem(24);
+  }
+}
+
+@mixin text-heading-2 {
+  @include text-heading-styles;
+  line-height: 134%;
+  font-weight: 400;
+
+  @include viewport-desktop {
+    font-size: 68px;
+  }
+
+  @include viewport-tablet {
+    font-size: 64px;
+  }
+  
+  @include viewport-phone {
+    font-size: 32px;
+    line-height: 100%;
+  }
+}
+
+@mixin text-heading-news-2 {
+  @include text-heading-styles;
+  line-height: 134%;
+
+  @include viewport-desktop {
+    font-size: px-to-rem(36);
+  }
+
+  @include viewport-tablet {
+    font-size: px-to-rem(32);
+  }
+  
+  @include viewport-phone {
+    font-size: px-to-rem(22);
+  }
+}
+
+@mixin text-heading-3 {
+  @include text-heading-styles;
+
+  @include viewport-desktop {
+    font-size: px-to-rem(24);
+  }
+
+  @include viewport-tablet {
+    font-size: px-to-rem(24);
+  }
+  
+  @include viewport-phone {
+    font-size: px-to-rem(24);
+  }
+}
+
+@mixin text-heading-news-3 {
+  @include text-heading-styles;
+
+  @include viewport-desktop {
+    font-size: px-to-rem(24);
+  }
+
+  @include viewport-tablet {
+    font-size: px-to-rem(24);
+  }
+  
+  @include viewport-phone {
+    font-size: px-to-rem(20);
+  }
+}
+
+@mixin text-heading-4 {
+  @include text-heading-styles;
+  line-height: 100%;
+
+  @include viewport-desktop {
+    font-size: px-to-rem(20);
+  }
+
+  @include viewport-tablet {
+    font-size: px-to-rem(20);
+  }
+  
+  @include viewport-phone {
+    font-size: px-to-rem(20);
+  }
+}
+
+@mixin text-heading-news-4 {
+  @include text-heading-styles;
+  line-height: 100%;
+
+  @include viewport-desktop {
+    font-size: px-to-rem(20);
+  }
+
+  @include viewport-tablet {
+    font-size: px-to-rem(20);
+  }
+  
+  @include viewport-phone {
+    font-size: px-to-rem(18);
+  }
+}
+
+@mixin text-heading-5 {
+  @include text-heading-4;
+}
+
+@mixin text-heading-6 {
+  @include text-heading-5;
+}

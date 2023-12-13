@@ -1,0 +1,84 @@
+@import '../base';
+
+.separate {
+  
+  //.separate__wrapper 
+  &__wrapper {
+    @include viewport-tablet-min {
+      display: flex;
+      align-items: center;
+    }
+
+    > * + * {
+      @include viewport-tablet-min {
+        margin-left: px-to-rem(42);
+      }
+      @include viewport-phone {
+        margin-top: px-to-rem(42);
+      }
+    }
+  }
+  
+  //.separate-media 
+  &-media {
+    --separate-clip-path: polygon(20% 0%, 100% 0, 100% 73%, 73% 100%, 0 100%, 0 18%);
+
+    max-width: px-to-rem(424);
+    width: 100%;
+
+    // @include viewport-phone {
+    //   @media (max-width: 500px) {
+    //     max-width: unset;
+    //     width: calc(100% + 2 * var(--wrap));
+    //     margin-left: calc(-1 * var(--wrap));
+    //   }
+    // }
+    
+    //.separate-media__container 
+    &__container {
+      position: relative;
+      display: flex;
+      overflow: hidden;
+      clip-path: var(--separate-clip-path);
+      
+      transform: translateZ(0);
+      background-color: var(--color-grey);
+
+      &::after {
+        content: '';
+        @include absolute-fullsize;
+        pointer-events: none;
+        clip-path: polygon(100% 68%, 68% 100%, 100% 100%);
+        background-color: var(--color-blue-100);
+      }
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  //.separate__text 
+  &__text {
+    width: 100%;
+
+    > * + * {
+      margin-top: px-to-rem(20);
+    }
+  }
+  
+  //.separate__description 
+  // &__description {
+  // }
+
+  //.separate__button 
+  &__button {
+    --color-theme: var(--color-red);
+    width: 100%;
+    max-width: max-content;
+    padding: px-to-rem(8) px-to-rem(26);
+
+    font-size: px-to-rem(14);
+  }
+}

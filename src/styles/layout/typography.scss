@@ -1,0 +1,213 @@
+@import '../base';
+
+.typography-article {
+
+  @at-root .typography-article.news-article__typography {
+    padding-top: px-to-rem(32);
+  }
+  
+  //.typography-article__container 
+  &__container {
+    padding-left: var(--wrap-2);
+    padding-right: var(--wrap-2);
+  }
+  
+  //.typography-article__wrapper 
+  &__wrapper {
+    width: 100%;
+
+    > * + * {
+      margin-top: px-to-rem(16);
+    }
+  }
+}
+
+.typography {
+  font-weight: 300;
+  line-height: 150%;
+  font-size: px-to-rem(16);
+
+  color: var(--color-black);
+
+  h1 {
+    
+    @at-root .typography.news-article__typography h1 {
+      @include text-heading-news-1;
+    }
+  }
+  
+  h2 {
+    @include text-heading-2;
+
+    @at-root .typography-article.news-article__typography .typography h2 {
+      @include text-heading-news-2;
+    }
+  }
+
+  h3 {
+    @include text-heading-3;
+
+    @at-root .typography-article.news-article__typography .typography h3 {
+      @include text-heading-news-3;
+    }
+  }
+
+  h4 {
+    @include text-heading-4;
+
+    @at-root .typography-article.news-article__typography .typography h4 {
+      @include text-heading-news-4;
+    }
+  }
+
+  h5 {
+    @include text-heading-4;
+
+    @at-root .typography-article.news-article__typography .typography h5 {
+      @include text-heading-news-4;
+    }
+  }
+
+  h6 {
+    @include text-heading-4;
+
+    @at-root .typography-article.news-article__typography .typography h6 {
+      @include text-heading-news-4;
+    }
+  }
+
+  a {
+    display: inline-block;
+    color: var(--color-blue-100);
+    text-underline-offset: px-to-rem(4);
+    text-decoration-thickness: 0.5px;
+    
+    @include hover-focus-visible {
+      @include non-mobile-device {
+        text-decoration: none;
+      }
+    } 
+  }
+
+  ul {
+    @include reset-ul;
+
+    li {
+      --marker-size: #{px-to-rem(18)};
+
+      position: relative;
+      z-index: 0;
+      padding-left: calc(var(--marker-size) + px-to-rem(6));
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: var(--marker-size);
+        height: var(--marker-size);
+
+        background-image: url('@/assets/img/star.svg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+      }
+    }
+
+    > * + * {
+      margin-top: px-to-rem(12);
+    }
+  }
+
+  ol {
+    list-style-type: decimal;
+    list-style-position: outside;
+
+    margin-left: px-to-rem(24);
+
+    > * + * {
+      margin-top: px-to-rem(12);
+    }
+
+    li {
+      position: relative;
+
+      @include viewport-tablet-min {
+        padding-left: px-to-rem(2);
+      }
+      @include viewport-phone {
+        padding-left: px-to-rem(4);
+      }
+
+      &::marker {
+        color: currentColor;
+      }
+    }
+  }
+
+  strong {
+    font-weight: 600;
+  }
+
+  i {
+    font-style: italic;
+  }
+
+  ins {
+    font-style: italic;
+    text-underline-offset: px-to-rem(4);
+    text-decoration-thickness: 0.5px;
+  }
+
+  blockquote {
+    border-bottom: 2px solid var(--color-red);
+    margin: 0;
+    padding-bottom: px-to-rem(20);
+
+    font-weight: 700;
+    line-height: 160%;
+
+    @include viewport-tablet-min {
+      font-size: px-to-rem(24);
+    }
+    @include viewport-phone {
+      font-size: px-to-rem(20);
+    }
+  }
+
+  figure {
+    display: flex;
+    width: 100%;
+    // display: grid;
+
+    clip-path: polygon(0% 0%, 100% 0, 100% 67%, 95% 100%, 0 100%);
+    
+    @include viewport-tablet-min {
+      margin: px-to-rem(40) 0;
+      //   grid-template-columns: repeat(auto-fit, minmax(px-to-rem(384), 1fr));
+      //   gap: px-to-rem(24);
+    }
+    
+    @include viewport-phone {
+      margin: px-to-rem(28) 0;
+      //   grid-template-columns: repeat(auto-fit, minmax(px-to-rem(150), 1fr));
+      //   gap: px-to-rem(16);
+
+      //   @media (max-width: 550px) {
+      //     grid-template-columns: 1fr;
+      //   }
+    }
+
+    @at-root .typography-article.pro-bono__typography .typography figure {
+      margin-top: 0;
+    }
+
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+
+  }
+}

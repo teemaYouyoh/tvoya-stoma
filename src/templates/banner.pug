@@ -1,0 +1,24 @@
+section.banner
+  ._container
+    .banner__wrapper
+      h1.banner__title!= '<span class="cp">TVOYA</span> dental studio ‒ <br/>вчасна стоматологія'
+      p(class="banner__text _tablet")!= "Прості рішення вже сьогодні. Вирішуємо проблеми тоді, коли вам зручно: <br/>без черг і очікування."
+      
+      div.banner__form.form-dark
+        form
+          div
+            input(type="text", placeholder="Прізвище*") 
+            input(type="text", placeholder="Ім'я*") 
+          
+          div 
+            input(type="tel", placeholder="Телефон*") 
+
+          div 
+            input(type="submit", value="ЗАПИСАТИСЯ ЗАРАЗ")
+            a(href="#", class="form__price button-dark") Подивитися ціни
+          
+      p(class="banner__text _desk")!= "Прості рішення вже сьогодні. Вирішуємо проблеми тоді, коли вам зручно: <br/>без черг і очікування."
+
+      .banner__img
+        img(src=require('@/assets/img/banner-bg.png'), alt="banner")
+          

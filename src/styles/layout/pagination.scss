@@ -1,0 +1,92 @@
+@import '../base';
+
+.pagination {
+  width: 100%;
+
+  > * + * {
+    margin-top: px-to-rem(20);
+  }
+  
+  //.pagination__container 
+  &__container {
+    @include hide-scroll-bars;
+    width: calc(100% + 2 * var(--wrap));
+    margin-left: calc(-1 * var(--wrap));
+    overflow-x: auto;
+  }
+
+  //.pagination__wrapper 
+  &__wrapper {
+    width: max-content;
+    margin: 0 auto;
+    padding-left: var(--wrap);
+    padding-right: var(--wrap);
+  }
+  
+  //.pagination__label 
+  &__label {
+    display: none;
+    justify-content: center;
+
+    width: 100%;
+    
+    // padding-left: var(--wrap);
+    // padding-right: var(--wrap);
+
+    @at-root .pagination.overlay & {
+      display: flex;
+    }
+    
+    img {
+      max-width: px-to-rem(100);
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .wp-pagenavi {
+    width: max-content;
+    display: flex;
+    justify-content: center;
+
+    > * + * {
+      margin-left: px-to-rem(10);
+    }
+
+    a,
+    span {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: px-to-rem(36);
+      height: px-to-rem(36);
+
+      text-decoration: unset;
+      text-align: center;
+      font-weight: 500;
+      font-size: px-to-rem(18);
+
+      //color: var(--color-black);
+      color: var(--color-white);
+      background-color: var(--color-blue-100);
+    }
+    
+    span {
+      clip-path: polygon(16% 0%, 100% 0, 100% 66%, 84% 100%, 0 100%, 0 34%);
+      background-color: rgba(var(--color-blue-100--rgb), 0.6);
+    }
+
+    a {
+      @include transition(clip-path 0.4s);
+      clip-path: polygon(0% 0%, 100% 0, 100% 100%, 100% 100%, 0 100%, 0 100%);
+
+      @include hover-focus-visible {
+        @include non-mobile-device {
+          clip-path: polygon(16% 0%, 100% 0, 100% 66%, 84% 100%, 0 100%, 0 34%);
+        }
+      }
+    }
+  }
+}

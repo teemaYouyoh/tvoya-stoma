@@ -1,0 +1,18 @@
+@import './base';
+
+:root {
+  @include viewport-tablet {
+    --wrap: calc((100vw - 910px) / 2);
+  }
+  @include viewport-phone {
+    --wrap: calc((100vw - 318px) / 2);
+  }
+  
+  --wrap: 10.416vw;
+
+  @include viewport-desktop {
+    @media (min-width: 1490px) {
+      --wrap: calc((100vw - 1490px) / 2);
+    }
+  }
+}

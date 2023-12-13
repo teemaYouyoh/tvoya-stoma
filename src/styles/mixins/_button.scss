@@ -1,0 +1,64 @@
+@import './reset';
+
+@mixin button {
+  @include reset-button;
+  position: relative;
+
+  display: inline-flex;
+  width: max-content;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: unset;
+  font-weight: 800;
+  line-height: 120%;
+  font-size: px-to-rem(18);
+
+  color: var(--color-theme);
+  background-color: var(--color-reverse);
+  transition: 0.3s ease;
+
+  border-radius: 18px;
+
+  @include viewport-desktop {
+    padding: 16px 42px;
+  }
+
+  @include viewport-tablet {
+    padding: 8px 70px;
+  }
+  
+  @include viewport-phone {
+    padding: 4px 20px;
+    font-size: px-to-rem(10);
+  }
+
+  @include hover-focus-visible {
+    @include non-mobile-device {
+      color: var(--color-white);
+      background-color: var(--color-pink);
+    }
+  }
+
+  > * + * {
+    margin-left: px-to-rem(8);
+  }
+}
+
+@mixin button-light {
+  --color-theme: var(--color-black);
+  --color-reverse: var(--color-white);
+  @include button;
+}
+
+@mixin button-dark {
+  --color-theme: var(--color-white);
+  --color-reverse: var(--color-black);
+  @include button;
+}
+
+@mixin button-pink {
+  --color-theme: var(--color-white);
+  --color-reverse: var(--color-pink);
+  @include button;
+}

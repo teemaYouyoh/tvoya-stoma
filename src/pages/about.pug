@@ -1,0 +1,27 @@
+-
+  const innerBanner = {
+    image: '',
+    title: 'Про Persona Patman'
+  };
+  const breadcrumbsName = 'Про нас';
+
+doctype html
+html(lang='en')
+  head
+    include @/layout/head.pug
+
+    title Persona Patman - About
+
+    //- link(rel='stylesheet', href=require('@/styles/pages/about.scss'))
+
+  body
+    include @/layout/header.pug
+
+    //- include @/templates/breadcrumbs.pug
+
+    //- include @/templates/banner-inner.pug
+
+    include @/layout/footer.pug
+
+    //- script(src=require('@/scripts/video.ts')) 
+    script(src=require('../index.ts')) 

@@ -1,0 +1,16 @@
+article.section.typography-article(class=`${classTypography ? classTypography : ''}`)
+  ._container.typography-article__container
+    .typography-article__wrapper
+      .typography
+        each item in typography 
+          case item.type 
+            when 'image'
+              figure
+                img(
+                  src=require(`${item.data}`),
+                  alt='typography',
+                  loading='lazy'
+                )
+
+            when 'text'
+              != item.data

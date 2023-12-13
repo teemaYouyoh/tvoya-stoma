@@ -1,0 +1,106 @@
+-
+  const popupList = [
+    //- { 
+    //-   name: 'banner', 
+    //-   type: 'video', 
+    //-   video: '@/assets/video/banner.mp4',
+    //- }, 
+    { 
+      name: 'search', 
+      type: 'search', 
+      video: '',
+      title: '',
+      subtitle: '',
+      isFullscreenPhone: 'false'
+    }, 
+    { 
+      name: 'menu', 
+      type: 'menu', 
+      video: '',
+      title: '',
+      subtitle: '',
+      isFullscreenPhone: 'false'
+    }, 
+    { 
+      name: 'about', 
+      type: 'common', 
+      video: '',
+      isFullscreenPhone: 'false'
+    },
+    { 
+      name: 'thanks', 
+      type: 'feedback', 
+      video: '',
+      isFullscreenPhone: 'false'
+    },
+    { 
+      name: 'error', 
+      type: 'feedback', 
+      video: '',
+      isFullscreenPhone: 'false'
+    },
+    { 
+      name: 'form', 
+      type: 'form', 
+      video: '',
+      isFullscreenPhone: 'true'
+    }
+  ];
+
+each item in popupList
+  div(
+    class=`popup popup-${item.type} ${item.name}__popup ${item.isFullscreenPhone === 'true' ? 'fullscreen-phone': ''}`,
+    data-popupname=`_popup-${item.name}`,
+    aria-modal='true',
+    role='dialog'
+  )
+    .popup__overlay
+    .popup__additional
+
+    .popup__scroll
+      .popup__wrapper
+        button.popup__close(
+          class=`${item.type === 'menu' || item.type === 'search' ? 'hidden' : ''}`
+        )
+          img(
+            class=`${item.isFullscreenPhone === 'true' ? 'desktop' : ''}`,
+            src=require('@/assets/img/popup-close.svg'),
+            alt='close'
+          )
+
+          if item.isFullscreenPhone === 'true'
+            img.mobile(
+              src=require('@/assets/img/popup-close-black.svg'),
+              alt='close'
+            )
+
+        .popup__content
+          case item.type 
+            when 'video'
+              .popup-video__media
+                video.video(
+                  disablePictureInPicture,
+                  preload='metadata',
+                  playsinline,
+                  controls
+                ) 
+                  source(data-src=require(`${item.video}`), type='video/mp4')
+
+            when 'search'
+              include @/templates/popup/search.pug
+
+            when 'menu'
+              include @/templates/popup/menu.pug
+
+            when 'feedback'
+              if item.name === 'thanks'
+                include @/templates/popup/thanks-popup.pug
+
+              if item.name === 'error'
+                include @/templates/popup/error-popup.pug
+
+            when 'form'
+              include @/templates/popup/form-popup.pug
+
+            default
+              include @/templates/popup/content-popup.pug

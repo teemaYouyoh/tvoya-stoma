@@ -1,0 +1,346 @@
+@import '../base';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 8;
+
+  //.header__top
+  &__top {
+    background-color: var(--color-black);
+    color: var(--color-white);
+
+    @include viewport-desktop {
+      padding: 28px 0;
+    }
+    
+    @include viewport-tablet {
+      padding: 18px 0;
+    }
+    
+    @include viewport-phone {
+      padding: 12px 0;
+    }
+  }
+  //.header__bottom
+  &__bottom {
+    background-color: var(--color-white);
+    color: var(--color-black);
+
+    @include viewport-phone {
+      display: none;
+    }
+
+    @include viewport-desktop {
+      padding: 8px 0;
+    }
+    
+    @include viewport-tablet {
+      padding: 8px 0;
+    }
+    
+    @include viewport-phone {
+      padding: 8px 0;
+    }
+  }
+
+  //.header__wrapper 
+  &__wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+    > * + * {
+      @include viewport-tablet-min {
+        margin-left: 48px;
+      }
+      @include viewport-phone {
+        margin-left: 20px;
+      }
+    }
+    
+  }
+  
+  //.header__logo 
+  &__logo {
+    flex-shrink: 0;
+
+    @include viewport-phone {
+      max-width: 62px;
+    }
+  }
+
+  
+  //.header__buttons 
+  &__buttons {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 17px;
+    color: var(--color-white);
+
+    @include viewport-phone {
+      font-size: 7px;
+    }
+
+    > * + * {
+      margin-left: px-to-rem(48);
+
+      @include viewport-phone {
+        margin-left: px-to-rem(20);
+      }
+    }
+
+    a {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 17px;
+      color: var(--color-white);
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      @include viewport-phone {
+        font-size: 7px;
+      }
+
+      @include hover-focus-visible {
+        color: var(--color-pink);
+      }
+    }
+  }
+
+  //.header__phones
+  &__phones {
+    > * + * {
+      @include viewport-tablet-min {
+        margin-top: 4px;
+      }
+    }
+
+    p {
+      line-height: 100%;
+    }
+  }
+
+  //.header__socials
+  &__socials {
+    display: flex;
+    align-items: center;
+
+    > * + * {
+      margin-left: 22px;
+
+      @include viewport-phone {
+        margin-left: 10px;
+      }
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+    }
+
+    svg {
+      transition: fill 0.3s ease;
+
+      &:hover {
+        fill: var(--color-pink);
+
+        path {
+          fill: var(--color-pink);
+        }
+      }
+
+      path {
+        transition: inherit;
+      }
+
+      @include viewport-phone {
+        width: auto;
+        height: 10px;
+      }
+    }
+  }
+
+  //.header__signup
+  &__signup {
+    a {
+      padding: 22px 70px;
+      border: 1px solid var(--color-white);
+      border-radius: 18px;
+      transition: 0.3s ease;
+
+      @include hover-focus-visible {
+        border: 1px solid var(--color-pink);
+      }
+
+      @include viewport-phone {
+        padding: 4px 8px;
+      }
+    }
+  }
+  
+  //.header__menu 
+  &__menu {
+    width: 100%;
+  }
+
+  //.header__search 
+  &__search {
+    @include reset-button;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: px-to-rem(25);
+    height: px-to-rem(25);
+
+    margin: px-to-rem(-4);
+    padding: px-to-rem(4);
+
+    color: var(--color-white);
+
+    svg {
+      max-width: px-to-rem(16);
+      width: 100%;
+      height: auto;
+
+      circle,
+      path {
+        @include transition(stroke 0.4s);
+
+        @at-root .header__search:hover svg path {
+          @include non-mobile-device {
+            stroke: var(--color-blue-100)
+          }
+        }
+        @at-root .header__search:hover svg circle {
+          @include non-mobile-device {
+            stroke: var(--color-blue-100)
+          }
+        }
+        @at-root .header__search:focus-visible svg path {
+          @include non-mobile-device {
+            stroke: var(--color-blue-100)
+          }
+        }
+        @at-root .header__search:focus-visible svg circle {
+          @include non-mobile-device {
+            stroke: var(--color-blue-100)
+          }
+        }
+      }
+    }
+  }
+}
+
+.menu__lang {
+  position: relative;
+  // padding-right: px-to-rem(10);
+  // padding-top: px-to-rem(10);
+  // padding-bottom: px-to-rem(10);
+  // margin-right: px-to-rem(-10);
+  // margin-top: px-to-rem(-10);
+  // margin-bottom: px-to-rem(-10);
+
+  > * + * {
+    margin-top: 4px;
+  }
+
+  &.desktop {
+    @include viewport-phone {
+      display: none;
+    }
+  }
+
+  &.popup-menu-lang {
+    padding: 0;
+    margin: 0;
+    margin-top: px-to-rem(50);
+
+    display: flex;
+
+    > * + * {
+      margin-left: px-to-rem(20);
+    }
+  }
+
+  ul {
+    position: absolute;
+    //left: px-to-rem(-10);
+    left: 0;
+    top: 100%;
+    width: max-content;
+    padding: px-to-rem(10);
+
+    opacity: 0;
+    visibility: hidden;
+    //transition: opacity 0.3s ease;
+    transition: opacity 0.4s ease, visibility 0.3s 0.4s;
+    background-color: var(--color-grey);
+
+    @at-root .menu__lang.viewed ul {
+      transition: opacity 0.4s ease 0.3s, visibility 0.3s 0s;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .lang-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: unset;
+      @include transition(color 0.3s);
+      color: inherit;
+
+      @include hover-focus-visible {
+        @include non-mobile-device {
+          color: var(--color-pink);
+        }
+      }
+      
+      @at-root .menu__lang.popup-menu-lang a {
+        @include transition(color 0.3s);
+
+        @include hover-focus-visible {
+          @include non-mobile-device {
+            color: var(--color-pink);
+          }
+        }
+      }
+    }
+
+    img {
+      width: px-to-rem(10);
+      height: auto;
+      margin-left: 0.5em;
+
+      @include transition(transform 0.3s);
+
+      @at-root .menu__lang.viewed img {
+        transform: rotate(180deg);
+      }
+
+      @at-root .menu__lang:focus-visible img {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  // .lang-item-current {
+  //   img {
+  //     max-width: px-to-rem(8);
+  //     width: 100%;
+  //     height: auto;
+  //   }
+  // }
+}

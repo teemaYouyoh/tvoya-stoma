@@ -1,0 +1,57 @@
+-
+  const menuPopupList = [
+    {
+      name: 'Про нас',
+      href: './about.html',
+      goto: ''
+    },
+    {
+      name: 'Імміграція',
+      href: './immigration.html',
+      goto: ''
+    },
+    {
+      name: 'Рекрутинг',
+      href: './recruiting.html',
+      goto: ''
+    },
+    {
+      name: 'Партнерство',
+      href: './partnership.html',
+      goto: ''
+    },
+    {
+      name: 'Команда',
+      href: './team.html',
+      goto: ''
+    },
+    {
+      name: 'Кейси',
+      href: './cases.html',
+      goto: ''
+    },
+    {
+      name: 'Контакти',
+      href: './contacts.html',
+      goto: ''
+    }
+  ];
+
+button.popup__close
+  img(src=require('@/assets/img/popup-close-black.svg'), alt='close')
+
+nav.menu
+  ul.menu-list
+    each item in menuPopupList
+      li.menu-list__item
+        a.menu__link(
+          class=`${item.goto !== 'false' ? 'anchor' : ''}`,
+          href=`${item.href}`,
+          data-goto=`${item.goto}`
+        ) #{ item.name }
+
+ul.menu__lang.popup-menu-lang
+  li
+    p.lang-item.lang-item-current укр
+  li
+    a.lang-item(href='#') eng

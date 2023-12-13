@@ -1,0 +1,14 @@
+.search
+  form#form-search.form.search__form(action='post') 
+    input#popup-name(type='text', name='name')
+
+    button(type='submit') 
+      <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="5.86381" cy="5.86393" r="5.24333" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+        </circle>
+        <path d="M9.51062 9.78296L11.5663 11.8333" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+        </path>
+      </svg>
+
+  button.popup__close
+    img(src=require('@/assets/img/popup-close-black.svg'), alt='close')

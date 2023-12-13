@@ -1,0 +1,37 @@
+@import '../base';
+
+.form-partnership {
+
+  @include viewport-tablet-min {
+    padding: px-to-rem(80) 0 px-to-rem(60);
+  }
+
+  @include viewport-phone {
+    padding: px-to-rem(60) 0;
+  }
+  
+  //.form-partnership__container 
+  &__container {
+    padding-left: var(--wrap-form);
+    padding-right: var(--wrap-form);
+  }
+  
+  //.form-partnership__wrapper 
+  &__wrapper {
+    > * + * {
+      margin-top: px-to-rem(44);
+    }
+  }
+  
+  //.form-partnership__description 
+  &__description {
+    text-align: center;
+    font-weight: 500;
+    line-height: 150%;
+    font-size: px-to-rem(16);
+  }
+  
+  //.form-partnership__form 
+  // &__form {
+  // }
+}

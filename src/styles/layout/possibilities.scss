@@ -1,0 +1,16 @@
+@import '../base';
+
+.possibilities {
+  
+  //.possibilities__wrapper 
+  &__wrapper {
+    > * + * {
+      margin-top: px-to-rem(36);
+    }
+  }
+  
+  //.possibilities__title 
+  &__title {
+    @include text-heading-2;
+  }
+}
