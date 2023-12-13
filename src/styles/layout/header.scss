@@ -138,32 +138,6 @@
         margin-left: 10px;
       }
     }
-
-    a {
-      display: flex;
-      align-items: center;
-    }
-
-    svg {
-      transition: fill 0.3s ease;
-
-      &:hover {
-        fill: var(--color-pink);
-
-        path {
-          fill: var(--color-pink);
-        }
-      }
-
-      path {
-        transition: inherit;
-      }
-
-      @include viewport-phone {
-        width: auto;
-        height: 10px;
-      }
-    }
   }
 
   //.header__signup
