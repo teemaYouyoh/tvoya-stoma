@@ -7,6 +7,10 @@
   &__wrapper {
     padding: 0 20px;
 
+    @include viewport-phone {
+      padding: 0 4px;
+    }
+
     > * + * {
       margin-top: 64px;
     }

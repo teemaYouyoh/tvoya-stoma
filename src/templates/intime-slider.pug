@@ -12,6 +12,9 @@ section.intime
               p.intime-slide__title!= 'Скільки <br/>коштує?'
 
               p.intime-slide__subtitle!= 'У нас фіксовані та прозорі ціни. Ви можете самостійно ознайомитись з прайсом на сайті, а також ми з радістю проконсультуємо вас: визначимо план лікування, час і назвемо остаточну вартість за весь пакет послуг.'
+
+              img.intime-slide__circle(src=require("@/assets/img/intime-circle.svg"), alt="")
+
         .swiper-slide.intime-slide
           .intime-slide__img
               img.desktop(src=require('@/assets/img/intime-slide-img.jpg'), alt='intime')
@@ -20,6 +23,9 @@ section.intime
               p.intime-slide__title!= 'Скільки <br/>коштує?'
 
               p.intime-slide__subtitle!= 'У нас фіксовані та прозорі ціни. Ви можете самостійно ознайомитись з прайсом на сайті, а також ми з радістю проконсультуємо вас: визначимо план лікування, час і назвемо остаточну вартість за весь пакет послуг.'
+              
+              img.intime-slide__circle(src=require("@/assets/img/intime-circle.svg"), alt="")
+
         .swiper-slide.intime-slide
           .intime-slide__img
               img.desktop(src=require('@/assets/img/intime-slide-img.jpg'), alt='intime')
@@ -28,6 +34,19 @@ section.intime
               p.intime-slide__title!= 'Скільки <br/>коштує?'
 
               p.intime-slide__subtitle!= 'У нас фіксовані та прозорі ціни. Ви можете самостійно ознайомитись з прайсом на сайті, а також ми з радістю проконсультуємо вас: визначимо план лікування, час і назвемо остаточну вартість за весь пакет послуг.'
+              
+              img.intime-slide__circle(src=require("@/assets/img/intime-circle.svg"), alt="")
 
-    .intime-slider-controls
-      .intime-slider-pagination pagination
+      .intime-slider-controls
+        button.intime-slider-prev
+          <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14.75 15.0767L2.15982 8.5L14.75 1.92334L14.75 15.0767Z" stroke="#E6007E" stroke-width="2"/>
+          </svg>
+
+        .intime-slider-pagination pagination
+
+        
+        button.intime-slider-next
+          <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.25 1.92334L13.8402 8.5L1.25 15.0767L1.25 1.92334Z" stroke="#E6007E" stroke-width="2"/>
+          </svg>
