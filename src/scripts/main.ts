@@ -1,3 +1,4 @@
+import accordionInit from './accordion/init';
 import counterInit from './counter/init';
 import fadeContentInit from './fadeContent/init';
 import imageAppearInit from './imageAppear/init';
@@ -6,9 +7,13 @@ import paginationHelp from './paginationHelp/init';
 import initPopups from './popup/init';
 import scrollBarInit from './scrollbar';
 import slidersInit from './sliders/init';
+import submenuToggle from './submenu/init';
 
 export const init = () => {
   scrollBarInit();
+  submenuToggle();
+  accordionInit();
+
   slidersInit();
   languageToggle();
   counterInit();

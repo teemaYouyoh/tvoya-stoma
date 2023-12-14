@@ -1,6 +1,8 @@
 @import '../base';
 
 .popup {
+  color: var(--color-white);
+
   &.popup-menu {
     @include viewport-tablet-min {
       --wrapper-width: #{px-to-rem(460)};
@@ -9,7 +11,7 @@
       --wrapper-width: #{px-to-rem(460)};
 
       @media (max-width: 550px) {
-        --wrapper-width: 88.888%;
+        --wrapper-width: 100%;
       }
     }
   }
@@ -23,11 +25,11 @@
 
   //.popup__overlay
   &__overlay {
-    background-color: rgba(var(--color-black--rgb), 0.88);
+    background-color: rgba(var(--color-grey--rgb), 0.88);
 
     @at-root .popup.fullscreen-phone & {
       @include viewport-phone {
-        background-color: var(--color-white);
+        background-color: var(--color-black);
       }
     }
 
@@ -42,7 +44,7 @@
     &::before {
       left: unset;
       right: 0;
-      background-color: var(--color-white);
+      background-color: var(--color-black);
     }
 
     @at-root .popup.popup-menu & {
@@ -52,32 +54,30 @@
   
   //.popup__wrapper 
   &__wrapper {   
+    background-color: var(--color-black);
+    
     @include viewport-desktop {
-      padding: px-to-rem(56) px-to-rem(90);
+      padding: px-to-rem(28) px-to-rem(32) px-to-rem(58);
+      border-radius: px-to-rem(18);
     }
           
     @include viewport-tablet {
       padding: px-to-rem(40) px-to-rem(76);
+      border-radius: px-to-rem(18);
+    }
+          
+    @include viewport-phone {
+      border-radius: px-to-rem(12);
     }
 
     @at-root .popup.popup-video & {
       margin: 0 auto;
       padding: px-to-rem(40) 0 px-to-rem(30);
-      background-color: transparent;
     }
 
     @at-root .popup.popup-feedback & {
       position: relative;
       z-index: 0;
-      background-color: transparent;
-  
-      &::before {
-        content: '';
-        @include absolute-fullsize;
-  
-        clip-path: polygon(0 0, 100% 0, 100% 91%, 92% 100%, 0% 100%);
-        background-color: var(--color-white);
-      }
   
       @include viewport-tablet-min {
         max-width: px-to-rem(400);
@@ -89,15 +89,6 @@
       @include viewport-tablet-min {
         position: relative;
         z-index: 0;
-        background-color: transparent;
-
-        &::before {
-          content: '';
-          @include absolute-fullsize;
-  
-          clip-path: polygon(0 0, 100% 0, 100% 91%, 92% 100%, 0% 100%);
-          background-color: var(--color-white);
-        }
       }
     }
 
@@ -107,6 +98,7 @@
       align-items: flex-start;
 
       padding: px-to-rem(18) px-to-rem(20);
+      border-radius: 0;
     }
 
     @at-root .popup.fullscreen-phone & {

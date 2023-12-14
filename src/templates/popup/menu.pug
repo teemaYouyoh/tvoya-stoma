@@ -1,54 +1,80 @@
 -
   const menuPopupList = [
     {
-      name: 'Про нас',
-      href: './about.html',
-      goto: ''
-    },
-    {
-      name: 'Імміграція',
+      name: ' Послуги',
       href: './immigration.html',
-      goto: ''
     },
     {
-      name: 'Рекрутинг',
+      name: 'ТVOYA  ціна',
       href: './recruiting.html',
-      goto: ''
+      submenu: [
+        {
+          name: 'sub 1',
+          href: '#',
+          goto: 'false',
+        },
+        {
+          name: 'sub 2',
+          href: '#',
+          goto: 'false',
+        },
+        {
+          name: 'sub 3',
+          href: '#',
+          goto: 'false',
+        },
+      ],
     },
     {
-      name: 'Партнерство',
+      name: 'Пропозиції',
       href: './partnership.html',
-      goto: ''
     },
     {
-      name: 'Команда',
+      name: 'Знайомство з TVOYA',
       href: './team.html',
-      goto: ''
     },
     {
-      name: 'Кейси',
+      name: 'Як знайти?',
       href: './cases.html',
-      goto: ''
     },
     {
-      name: 'Контакти',
+      name: 'Вакансії',
       href: './contacts.html',
-      goto: ''
-    }
+    },
+    {
+      name: 'Франчайзинг',
+      href: './contacts.html',
+    },
   ];
 
 button.popup__close
   img(src=require('@/assets/img/popup-close-black.svg'), alt='close')
 
 nav.menu
-  ul.menu-list
+  ul.menu-list.accordion(data-is-label-click='true')
     each item in menuPopupList
-      li.menu-list__item
-        a.menu__link(
-          class=`${item.goto !== 'false' ? 'anchor' : ''}`,
-          href=`${item.href}`,
-          data-goto=`${item.goto}`
-        ) #{ item.name }
+      li.menu-list__item(
+        class=`${item.submenu && item.submenu.length !== 0 ? 'accordion__item' : ''}`
+      )
+        .menu-list__item__header
+          a.menu__link(
+            class=`${item.goto !== 'false' ? 'anchor' : ''}`,
+            href=`${item.href}`,
+            data-goto=`${item.goto}`
+          ) #{ item.name }
+
+          if item.submenu && item.submenu.length !== 0
+            button.accordion__label.menu-list__label
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.99779 9L1.98213 1.5L8.01346 1.5L4.99779 9Z" fill="currentColor"/>
+              </svg>
+
+        if item.submenu && item.submenu.length !== 0
+          .accordion__details
+            ul.menu-submenu-list.accordion__description
+              each subItem in item.submenu
+                li
+                  a.menu-submenu__link(href=`${subItem.href}`) #{ subItem.name }
 
 ul.menu__lang.popup-menu-lang
   li

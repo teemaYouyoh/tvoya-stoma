@@ -7,6 +7,23 @@
     {
       name: 'ТVOYA  ціна',
       href: './recruiting.html',
+      submenu: [
+        {
+          name: 'sub 1',
+          href: '#',
+          goto: 'false',
+        },
+        {
+          name: 'sub 2',
+          href: '#',
+          goto: 'false',
+        },
+        {
+          name: 'sub 3',
+          href: '#',
+          goto: 'false',
+        },
+      ],
     },
     {
       name: 'Пропозиції',
@@ -96,7 +113,22 @@ header.header
               ) Експрес запис
 
             each item in menuList
-              li.menu-list__item
+              li.menu-list__item(
+                class=`${item.submenu && item.submenu.length !== 0 ? 'additional' : ''}`,
+                data-submenu=`${item.submenu && item.submenu.length !== 0 ? 'true' : 'false'}`
+              )
                 a.menu__link(href=`${item.href}`) #{ item.name }
+
+                if item.submenu && item.submenu.length !== 0
+                  button.menu-submenu-open
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M4.99779 9L1.98213 1.5L8.01346 1.5L4.99779 9Z" fill="currentColor"/>
+                    </svg>
+
+                  .menu-submenu
+                    ul.menu-submenu-list
+                      each subItem in item.submenu
+                        li
+                          a.menu-submenu__link(href=`${subItem.href}`) #{ subItem.name }
 
   include @/layout/popup.pug

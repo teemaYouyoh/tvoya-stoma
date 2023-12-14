@@ -18,7 +18,7 @@
   color: var(--color-black);
 
   @include viewport-desktop {
-    --wrapper-width: #{px-to-rem(866)};
+    --wrapper-width: #{px-to-rem(976)};
   }
 
   @include viewport-tablet {

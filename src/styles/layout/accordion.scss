@@ -1,0 +1,105 @@
+@import '../base';
+
+.accordion {  
+  //.accordion__item 
+  // &__item {
+  // }
+  
+  //.accordion__summary 
+  &__summary {
+    @include reset-button;
+
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    text-align: left;
+    color: inherit;
+  }
+  
+  //.accordion__title 
+  // &__title {
+  // }
+  
+  //.accordion__label 
+  &__label {
+    @include reset-button;
+
+    flex-shrink: 0;
+    position: relative;
+    z-index: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    @at-root .accordion__item._active & {
+      transform: rotate(180deg);
+    }
+    
+    @include transition(transform 0.3s);
+    // color: inherit;
+    color: var(--color-pink);
+    
+    @include viewport-tablet-min {
+      max-width: px-to-rem(20);
+      height: px-to-rem(20);
+    }
+
+    @include viewport-phone {
+      max-width: px-to-rem(18);
+      height: px-to-rem(18);
+    }
+
+    svg {
+      width: 100%;
+      height: auto;
+    }
+
+    // @include hover-focus-visible {
+    //   @include non-mobile-device {
+    //     color: var(--color-pink);
+    //   }
+    // } 
+
+    // &::before,
+    // &::after {
+    //   content: '';
+    //   display: block;
+    //   position: absolute;
+    //   top: 50%;
+    //   left: 50%;
+
+    //   width: 100%;
+    //   height: 2px;
+
+    //   transform-origin: 50% 50%;
+    //   transform: translate(-50%, -50%);
+    //   background-color: currentColor;
+    // }
+
+    // &::after {
+    //   @include transition(transform 0.3s);
+    //   transform: translate(-50%, -50%) rotate(90deg);
+
+    //   @at-root .accordion__item._active .accordion__label::after {
+    //     transform: translate(-50%, -50%);
+    //   }
+    // }
+  }
+  
+  //.accordion__details 
+  &__details {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    will-change: height, opacity;
+  }
+  
+  //.accordion__description 
+  &__description {
+    padding-top: px-to-rem(16);
+  }
+}
