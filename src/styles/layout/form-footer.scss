@@ -1,0 +1,92 @@
+@import '../base';
+
+.form-footer {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  
+  color: var(--color-white);
+  
+  //.form-footer__wrapper 
+  &__wrapper {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    background-color: var(--color-black);
+    border-radius: 0 0 50px 50px;
+
+    overflow: hidden;
+
+    @include viewport-tablet-min {
+      padding: 64px 60px 116px;
+    }
+    @include viewport-phone {
+      padding: 32px 24px 64px;
+     
+
+      @media (max-width: 540px) {
+        border-radius: 0 0 16px 16px;
+        padding: 12px 10px;
+      }
+    }
+  }
+
+
+  //.form-footer__form
+  &__form{
+
+    @include viewport-desktop {
+      width: 76%;
+      max-width: 960px;
+    }
+    @include viewport-tablet {
+      width: 100%;
+      max-width: 614px;
+    }
+
+    @include viewport-phone {
+      width: 100%;
+    }
+
+    input[type="submit"] {
+      width: auto;
+    }
+
+    .form__price {
+      font-weight: 500;
+      border: 2px solid var(--color-white);
+      width: auto;
+
+      @include hover-focus-visible {
+        border: 2px solid var(--color-pink);
+      }
+    }
+  }
+  
+  //.form-footer__img
+  &__img {
+    position: absolute;
+
+    @include viewport-desktop {
+      bottom: -4px;
+      left: 0;
+    }
+
+    @include viewport-tablet {
+      max-width: 144px;
+      bottom: -4px;
+      left: -1px;
+    }
+    
+    @include viewport-phone {
+      display: none
+    }
+
+    img {
+      @include viewport-tablet-max {
+        width: 100%;
+      }
+    }
+  }
+}

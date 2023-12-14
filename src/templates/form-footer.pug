@@ -1,0 +1,23 @@
+section.form-footer
+  ._container
+    .form-footer__wrapper
+      div.form-footer__form.form-dark
+        form
+          div
+            input(type="text", placeholder="Прізвище*") 
+            input(type="text", placeholder="Ім'я*") 
+          
+          div 
+            input(type="tel", placeholder="Телефон*") 
+
+          div 
+            select(name="clinic") 
+              option(value="null", selected) Вибрати клініку
+              option(value="Голосіївський") Голосіївський
+              option(value="Оболонський") Оболонський
+            
+            input(type="submit", value="ЗАПИСАТИСЬ")
+          
+      .form-footer__img
+        img(src=require('@/assets/img/form-footer-bg.png'), alt="form-footer")
+          

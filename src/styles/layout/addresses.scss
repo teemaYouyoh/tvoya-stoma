@@ -1,10 +1,14 @@
 @import '../base';
 
 .addresses {
-  padding: 0 20px;
-
+  @include viewport-desktop {
+   padding: 0 20px 74px;
+  }
+  @include viewport-tablet {
+   padding: 0 20px 40px;
+  }
   @include viewport-phone {
-    padding: 0 4px;
+    padding: 0 4px 24px;
   }
   
   //.addresses__wrapper
@@ -58,7 +62,12 @@
           margin-left: 60px;
         }
         @include viewport-phone {
+          margin-left: 40px;
         }
+      }
+
+      @include viewport-phone {
+        justify-content: flex-start;
       }
     }
 
@@ -130,26 +139,45 @@
 
   //.addresses__map
   &__map {
-    iframe {
-      filter: grayscale(1);
+
+     //.addresses__map-img
+     &-img {
+      position: relative;
+      display: block;
+      padding-top: 75%;
 
       @include viewport-desktop {
         width: 564px;
 
         @media (max-width: 1480px) {
           width: 361px;
-          height: 270px;
         }
       }
       @include viewport-tablet {
         width: 361px;
-        height: 270px;
       }
       @include viewport-phone {
-        width: 100%;
-        height: 213px;
+        width: 80%;
+        padding-top: 60%;
+        margin: 0 auto;
+
+        @media (max-width: 540px) {
+          padding-top: 75%;
+          width: 100%;
+        }
       }
-    }
+
+      img {
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+     }
+    
 
     //.addresses__map-more
     &-more {
