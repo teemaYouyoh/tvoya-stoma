@@ -1,10 +1,14 @@
 @import '../base';
 
 .addresses {
-  padding: 0 20px;
-
+  @include viewport-desktop {
+   padding: 0 20px 74px;
+  }
+  @include viewport-tablet {
+   padding: 0 20px 40px;
+  }
   @include viewport-phone {
-    padding: 0 4px;
+    padding: 0 4px 24px;
   }
   
   //.addresses__wrapper
