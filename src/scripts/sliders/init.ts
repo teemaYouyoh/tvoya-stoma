@@ -30,7 +30,7 @@ const sliderIntimeInit = (sliders: Array<IInitializedSlider>) => {
       },
       config: {
         effect: 'slide',
-        allowTouchMove: false,
+        allowTouchMove: true,
         autoplay: {
           delay: 10000,
           disableOnInteraction: false

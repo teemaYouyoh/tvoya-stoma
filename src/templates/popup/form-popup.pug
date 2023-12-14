@@ -1,8 +1,8 @@
 .action
-  p.action__title Отримати консультацію
+  p.action__title Експрес запис
 
   .action__main
-    form#form-popup.form.action__form(action='post') 
+    form#form-popup.form.action__form.form-dark(action='post') 
       //- div
       //-   label(for='popup-select') 
       //-     strong Тип звернення
@@ -13,36 +13,39 @@
       //-     span.wpcf7-not-valid-tip Невірний формат
 
       div
-        label(for='popup-name') 
-          strong Ім’я
-          input#popup-name(type='text', name='name')
-          span.wpcf7-not-valid-tip Невірний формат
-
         label(for='popup-lastname') 
-          strong Прізвище
-          input#popup-lastname(type='text', name='lastname')
+          //- strong Прізвище
+          input#popup-lastname(
+            type='text',
+            name='lastname',
+            placeholder='Прізвище'
+          )
+          span.wpcf7-not-valid-tip Невірний формат
+
+        label(for='popup-name') 
+          //- strong Ім’я
+          input#popup-name(type='text', name='name', placeholder='Ім’я')
           span.wpcf7-not-valid-tip Невірний формат
 
       div
-        label(for='popup-email') 
-          strong Email
-          input#popup-email(type='email', name='email')
-          span.wpcf7-not-valid-tip Невірний формат
-
         label(for='popup-telephone') 
-          strong Телефон
-          input#popup-telephone(type='tel', name='telephone')
+          //- strong Телефон
+          input#popup-telephone(
+            type='tel',
+            name='telephone',
+            placeholder='Телефон'
+          )
           span.wpcf7-not-valid-tip Невірний формат
 
-      div
-        label(for='popup-request') 
-          strong Чим ми можемо допомогти
-          textarea#popup-request(name='request')
-          span.wpcf7-not-valid-tip Невірний формат
+      //- div
+      //-   label(for='popup-request') 
+      //-     strong Чим ми можемо допомогти
+      //-     textarea#popup-request(name='request')
+      //-     span.wpcf7-not-valid-tip Невірний формат
 
       p
-        button(type='submit') Відправити
+        button(type='submit') ЗАПИСАТИСЬ
 
-        span Натискаючи на кнопку "Відправити" ви погоджуєтесь з
-          a(href='./document.html', target='_blank', rel='noreferrer') умовами конфіденційності
-          span компанії Persona Patman
+        //- span Натискаючи на кнопку "Відправити" ви погоджуєтесь з
+        //-   a(href='./document.html', target='_blank', rel='noreferrer') умовами конфіденційності
+        //-   span компанії Persona Patman

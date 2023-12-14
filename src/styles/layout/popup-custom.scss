@@ -1,6 +1,18 @@
 @import '../base';
 
 .popup {
+  @include viewport-desktop {
+    --shift-close: #{px-to-rem(52)};
+  }
+
+  @include viewport-tablet {
+    --shift-close: #{px-to-rem(36)};
+  }
+  
+  @include viewport-phone {
+    --shift-close: #{px-to-rem(12)};
+  }
+
   color: var(--color-white);
 
   &.popup-menu {
@@ -57,16 +69,17 @@
     background-color: var(--color-black);
     
     @include viewport-desktop {
-      padding: px-to-rem(28) px-to-rem(32) px-to-rem(58);
-      border-radius: px-to-rem(18);
+      padding: calc(var(--shift-close) + #{px-to-rem(24)} + #{px-to-rem(20)}) px-to-rem(32) px-to-rem(58);
+      border-radius: px-to-rem(54);
     }
           
     @include viewport-tablet {
-      padding: px-to-rem(40) px-to-rem(76);
+      padding: calc(var(--shift-close) + #{px-to-rem(24)} + #{px-to-rem(16)}) px-to-rem(76);
       border-radius: px-to-rem(18);
     }
           
     @include viewport-phone {
+      padding-top: calc(var(--shift-close) + #{px-to-rem(24)} + #{px-to-rem(10)});
       border-radius: px-to-rem(12);
     }
 
@@ -89,6 +102,11 @@
       @include viewport-tablet-min {
         position: relative;
         z-index: 0;
+      }
+      
+      @include viewport-phone {
+        padding-left: px-to-rem(30);
+        padding-right: px-to-rem(30);
       }
     }
 
@@ -119,8 +137,18 @@
   
   //.popup__close 
   &__close {
+    top: var(--shift-close);
+
     &.hidden {
       display: none;
+    }
+
+    @include viewport-tablet-min {
+      right: px-to-rem(40);
+    }
+
+    @include viewport-phone {
+      right: px-to-rem(16);
     }
 
     @at-root .popup.popup-menu & {

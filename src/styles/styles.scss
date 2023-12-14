@@ -179,13 +179,27 @@ section,
 
 .action {
   > * + * {
-    margin-top: px-to-rem(50);
+    @include viewport-tablet-min {
+      margin-top: px-to-rem(58);
+    }
+    @include viewport-phone {
+      margin-top: px-to-rem(26);
+    }
   }
 
   //.action__title 
   &__title {
-    @include text-heading-2;
-    text-align: center;
+    @include text-heading-1;
+    font-weight: 500;
+    color: var(--color-pink);
+
+    @include viewport-tablet-min {
+      text-align: left;
+    }
+
+    @include viewport-phone {
+      text-align: center;
+    }
   }
 }
 
