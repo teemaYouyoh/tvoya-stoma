@@ -13,6 +13,12 @@
 
     > * + * {
       margin-top: 64px;
+
+      @include viewport-phone {
+        @media (max-width: 540px) {
+          margin-top: 20px;
+        }
+      }
     }
   }
 
@@ -39,6 +45,10 @@
     justify-content: space-between;
     height: 100%;
 
+    @include viewport-phone {
+      justify-content: center;
+    }
+
     &:nth-child(2) {
       margin: 0 auto;
 
@@ -51,7 +61,18 @@
       }
     
       @include viewport-phone {
-        max-width: 126px;
+        min-width: 136px;
+        max-width: 136px;
+      }
+    }
+
+    > .services-main__item + .services-main__item {
+      @include viewport-phone {
+        margin-top: 50px;
+
+        @media (max-width: 540px) {
+          margin-top: 18px;
+        }
       }
     }
   }
@@ -68,10 +89,16 @@
     a {
       font-size: 25px;
       font-weight: 400;
-      line-height: 30px;
+      line-height: 110%;
       color: var(--color-black);
       text-decoration: none;
       transition: 0.3s ease;
+
+      @include viewport-phone {
+        font-size: 11px;
+        line-height: 13px;
+        letter-spacing: -0.05em;
+      }
 
       &:hover {
         color: var(--color-pink);
@@ -80,7 +107,7 @@
       &:after {
         content: "▶";
         margin-left: 8px;
-        font-size: 18px;
+        font-size: 11px;
       }
     }
   }
