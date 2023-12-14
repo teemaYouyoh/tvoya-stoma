@@ -239,24 +239,39 @@ form {
 
     @at-root form.search__form button[type="submit"] {
       flex-shrink: 0;
-      width: px-to-rem(25);
-      height: px-to-rem(25);
+      width: px-to-rem(40);
+      height: px-to-rem(36);
 
       padding: 0;
 
-      color: var(--color-black);
-      background-color: var(--color-white);
+      color: unset;
+      background-color: transparent;
       
       @include hover-focus-visible {
         @include non-mobile-device {
-          color: var(--color-pink);
+          color: inset;
+          background-color: transparent;
         }
       }
 
       svg {
-        max-width: px-to-rem(20);
         width: 100%;
         height: auto;
+
+        @include viewport-phone {
+          width: 18px;
+          height: auto;
+        }
+
+        path {
+          transition: 0.3s ease;
+
+          @at-root svg:hover path {
+            @include non-mobile-device {
+              fill: var(--color-pink);
+            }
+          }
+        }
       }
     }
   }
