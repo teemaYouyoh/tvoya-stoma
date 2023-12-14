@@ -36,23 +36,26 @@ textarea {
   border: 2px solid var(--color-theme);
   border-radius: 18px;
 
-  @include viewport-desktop {
-    padding: 13px 16px;
-  }
-  @include viewport-tablet {
-    padding: 6px 20px;
-  }
-  @include viewport-phone {
-    padding: 4px 8px;
-  }
-
-  @include transition(border 0.4s);
-
   font-family: $font-family;
   font-size: px-to-rem(16);
   line-height: 100%;
   font-weight: 400;
   color: var(--color-theme);
+
+  @include viewport-desktop {
+    padding: 13px 16px;
+  }
+  @include viewport-tablet {
+    padding: 8px 20px;
+  }
+  @include viewport-phone {
+    padding: 2px 8px;
+    font-size: px-to-rem(10);
+  } 
+
+  @include transition(border 0.4s);
+
+
 
   &:focus-visible {
     border-color: var(--color-theme);
@@ -187,7 +190,9 @@ form {
     }
 
     @include viewport-phone {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, 1fr);
+      // grid-template-columns: 1fr;
+      gap: px-to-rem(16) px-to-rem(16);
     }
 
     @at-root form.form.contacts__form {
@@ -202,14 +207,16 @@ form {
 
     > * {
       &:only-child {
-        @include viewport-tablet-min {
-          grid-column: -1 / 1;
-        }
+        grid-column: -1 / 1;
       }
     }
 
     + * {
       margin-top: px-to-rem(34);
+
+      @include viewport-phone {
+        margin-top: px-to-rem(16);
+      }
     }
   }
 

@@ -16,7 +16,11 @@
   }
   
   @include viewport-phone {
-    margin-top: px-to-rem(18);
+    margin-top: px-to-rem(36);
+
+    @media (max-width: 540px) {
+      margin-top: px-to-rem(18);
+    }
   }
 
   //.banner__wrapper 
@@ -32,7 +36,13 @@
       padding: 32px 24px 64px;
     }
     @include viewport-phone {
-      padding: 12px 8px;
+      padding: 32px 24px 64px;
+     
+
+      @media (max-width: 540px) {
+        border-radius: 16px 16px 0 0;
+        padding: 12px 10px;
+      }
     }
   }
 
@@ -40,13 +50,30 @@
   &__title {
     @include text-heading-1;
     font-weight: 600;
+
+    @include viewport-desktop {
+      max-width: 830px;
+    }
+
+    @include viewport-tablet {
+      max-width: 565px;
+    }
+
+    @include viewport-phone {
+      max-width: 420px;
+
+      @media (max-width: 540px) {
+        max-width: 280px;
+      }
+    }
+  
   }
   
   //.banner__text
   &__text{
     font-size: 22px;
     font-weight: 400;
-    line-height: 27px;
+    line-height: 110%;
 
     @include viewport-desktop {
       margin-top: 52px;
@@ -65,6 +92,17 @@
 
       @include viewport-tablet-max {
         display: block;
+        max-width: 565px;
+      }
+
+      @include viewport-phone {
+        max-width: 420px;
+        
+
+        @media (max-width: 540px) {
+          font-size: 12px;
+          max-width: 220px;
+        }
       }
     }
   }
@@ -98,7 +136,54 @@
   //.banner__img
   &__img {
     position: absolute;
-    bottom: 80px;
-    left: 72%;
+
+    @include viewport-desktop {
+      bottom: 80px;
+      left: 72%;
+
+      @media (max-width: 1440px) {
+        bottom: -8px;
+        left: 82%;
+      }
+    }
+
+    @include viewport-tablet {
+      max-width: 302px;
+      top: 0;
+      right: 0;
+    }
+    
+    @include viewport-phone {
+      max-width: 200px;
+      top: 0;
+      right: 0;
+
+      @media (max-width: 670px) {
+        max-width: 150px;
+      }
+
+      @media (max-width: 540px) {
+        max-width: 100px;
+        top: 89px;
+        right: -20px;
+      }
+
+      @media (max-width: 330px) {
+        right: -40px;
+      }
+    }
+
+    img {
+      @include viewport-tablet-max {
+        width: 100%;
+      }
+      @include viewport-phone {
+        width: 100%;
+
+        @media (max-width: 540px) {
+          transform: rotate(89deg);
+        }
+      }
+    }
   }
 }
