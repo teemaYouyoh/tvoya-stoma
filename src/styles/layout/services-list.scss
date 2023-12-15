@@ -20,6 +20,11 @@
     
       @include viewport-phone {
         grid-template-columns: 1fr;
+        gap: px-to-rem(48);
+
+        @media (max-width: 450px) {
+          gap: px-to-rem(32);
+        }
       }
     }
   }

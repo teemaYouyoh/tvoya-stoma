@@ -30,20 +30,16 @@
 
     @include viewport-phone {
       border: 2px solid var(--color-black);
-      padding: 6px;
+      padding: 6px 12px;
     }
 
     input {
       color: var(--color-black);
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 600;
       line-height: 13px;
       border: none;
       padding: 0;
-
-      @include viewport-phone {
-        font-size: 8px;
-      }
 
       &::placeholder {
         color: inherit;

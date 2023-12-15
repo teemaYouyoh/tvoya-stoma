@@ -302,4 +302,22 @@
       }
     }
   }
+
+  //.menu-socials 
+  &-socials {
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+    margin: 40px auto 0;
+    
+    svg {
+      fill: var(--color-white);
+      width: 24px;
+
+      path {
+        fill: var(--color-white);
+      }
+    }
+    
+  }
 }
