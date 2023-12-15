@@ -1,32 +1,29 @@
 @import '../base';
 
 .breadcrumbs__container {
-  background-color: var(--color-grey);
 }
 
 .breadcrumbs {
   display: flex;
-  padding: px-to-rem(12) 0;
-
+  padding: 16px 24px;
   font-weight: 300;
-  font-size: px-to-rem(12);
+  font-size: px-to-rem(14);
   line-height: 112%;
   color: var(--color-black);
-
-  @include viewport-tablet-min {
-    margin-top: px-to-rem(62);
-  }
-  
-  @include viewport-phone {
-    margin-top: px-to-rem(66);
-  }
 
   a {
     position: relative;
     display: inline-block;
     text-decoration: unset;
-    font-weight: 600;
+    font-weight: 400;
     color: currentColor;
+    transition: 0.4s ease;
+
+   &:hover {
+      @include non-mobile-device {
+        color: var(--color-pink);
+      }
+    }
 
     &::before {
       content: '';

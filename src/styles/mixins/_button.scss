@@ -30,9 +30,8 @@
   }
   
   @include viewport-phone {
-    padding: 4px 10px;
-    font-size: px-to-rem(10);
-    height: 20px;
+    padding: 8px 12px;
+    font-size: px-to-rem(12);
   }
 
   @include hover-focus-visible {

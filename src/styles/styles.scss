@@ -286,6 +286,25 @@ section,
   color: var(--color-pink)
 }
 
+.inner-wrapper {
+  background-color: var(--color-white);
+
+  @include viewport-desktop {
+    padding: 28px 24px;
+    border-radius: 54px;
+  }
+
+  @include viewport-tablet {
+    padding: 28px 22px;
+    border-radius: 54px;
+  }
+
+  @include viewport-phone {
+    padding: 20px 12px;
+    border-radius: 24px;
+  }
+}
+
 //templates
 @import './layout/form';
 @import './layout/header';
@@ -309,7 +328,8 @@ section,
 @import './layout/addresses';
 @import './layout/socials';
 @import './layout/form-footer';
-// @import './layout/banner-inner';
+@import './layout/banner-services';
+@import './layout/services-list';
 // @import './layout/about-info';
 // @import './layout/separate';
 // @import './layout/immigration-services';

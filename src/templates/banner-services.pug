@@ -1,0 +1,30 @@
+section.banner-services
+  h1.banner-services__title= 'Послуги'
+  p.banner-services__subtitle!= 'Ваша проблема — наша задача.'
+
+  .banner-services__wrapper
+    .banner-services__left
+      .banner-services__circle
+        .banner-services__img
+          img(src=require('@/assets/img/services.svg'), alt="services")
+        .banner-services__label 
+          p!= "Вчасне <br/>рішення"
+      
+      p.banner-services__text(class="_mob")!= 'Якщо зуб болить нестерпно, щось сталося перед важливою подією, не можете більше чекати —  ви звернулися до нас дуже вчасно. Ми вирішуємо проблеми швидко та якісно.'
+
+    .banner-services__right
+      p.banner-services__text(class="_desk")!= 'Якщо зуб болить нестерпно, щось сталося перед важливою подією, не можете більше чекати —  ви звернулися до нас дуже вчасно. Ми вирішуємо проблеми швидко та якісно.'
+
+      .banner-services__form.form-light
+        form
+          div
+            input(type="text", placeholder="Прізвище*") 
+            input(type="text", placeholder="Ім'я*") 
+          
+          div 
+            input(type="tel", placeholder="Телефон*") 
+
+          div
+            div
+            input(type="submit", value="ЗАПИСАТИСЬ")
+          

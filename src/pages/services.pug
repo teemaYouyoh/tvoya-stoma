@@ -1,0 +1,32 @@
+-
+  const breadcrumbsName = 'Послуги';
+
+doctype html
+html(lang='en')
+  head
+    include @/layout/head.pug
+
+    title Послуги
+
+    link(rel='stylesheet', href=require('@/styles/pages/services.scss'))
+
+  body
+    include @/layout/header.pug
+    
+    include @/templates/search.pug
+
+    include @/templates/breadcrumbs.pug
+
+
+    main.inner
+      ._container
+        .inner-wrapper
+          include @/templates/banner-services.pug
+
+          include @/templates/services-list.pug
+      
+
+    include @/layout/footer.pug
+
+    //- script(src=require('@/scripts/video.ts')) 
+    script(src=require('../index.ts')) 

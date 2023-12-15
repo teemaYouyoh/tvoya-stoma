@@ -6,6 +6,7 @@ const PugPlugin = require('pug-plugin');
 
 const pageNames = [
   'about',
+  'services',
 ];
 
 const pages = pageNames.map((name) => {
