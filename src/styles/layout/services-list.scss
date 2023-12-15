@@ -59,7 +59,6 @@
         color: inherit;
         text-align: center;
         font-family: Montserrat;
-        font-size: 23px;
         font-weight: 600;
         line-height: 110%;
         position: absolute;
@@ -67,6 +66,7 @@
         @include viewport-desktop {
           left: 35%;
           top: 39px;
+          font-size: 23px;
 
           @media (max-width: 1500px) {
             top: 42px;
@@ -78,14 +78,16 @@
         @include viewport-tablet {
           left: 35%;
           top: 39px;
+          font-size: 23px;
         }
       
         @include viewport-phone {
-          left: 146px;
-          top: 40px;
+          left: 168px;
+          top: 44px;
+          font-size: 16px;
 
           @media (max-width: 450px) {
-            left: 30%;
+            left: 38%;
           }
         }
       }
@@ -113,10 +115,8 @@
     //.services-sublist__item
     &__item{
       display: block;
-      padding: 9px 16px 16px;
       border: 2px solid var(--color-black);
       border-radius: 9px;
-      font-size: 18px;
       font-weight: 500;
       color: var(--color-black);
       text-decoration: none;
@@ -125,6 +125,16 @@
       &:hover {
         color: var(--color-pink);
         border: 2px solid var(--color-pink);
+      }
+
+      @include viewport-tablet-min {
+        font-size: 18px;
+        padding: 9px 16px 16px;
+      }
+
+      @include viewport-phone {
+        font-size: 14px;
+        padding: 8px 16px;
       }
     }
 

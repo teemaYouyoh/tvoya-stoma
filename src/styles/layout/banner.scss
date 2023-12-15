@@ -100,7 +100,7 @@
         
 
         @media (max-width: 540px) {
-          font-size: 12px;
+          font-size: 14px;
           max-width: 220px;
         }
       }
@@ -126,6 +126,7 @@
       font-weight: 500;
       border: 2px solid var(--color-white);
       width: auto;
+      text-align: center;
 
       @include hover-focus-visible {
         border: 2px solid var(--color-pink);
@@ -164,7 +165,7 @@
 
       @media (max-width: 540px) {
         max-width: 100px;
-        top: 89px;
+        top: 110px;
         right: -20px;
       }
 

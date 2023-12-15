@@ -91,7 +91,7 @@
         font-size: 32px;
       }
       @include viewport-phone {
-        font-size: 12px;
+        font-size: 14px;
       }
     }
 
@@ -119,7 +119,7 @@
       }
     
       @include viewport-phone {
-        font-size: 12px;
+        font-size: 14px;
       }
     }
     //.addresses-item__address
@@ -132,7 +132,7 @@
       }
     
       @include viewport-phone {
-        font-size: 12px;
+        font-size: 14px;
       }
     }
   }
@@ -199,7 +199,7 @@
           font-size: 20px;
         }
         @include viewport-phone {
-          font-size: 12px;
+          font-size: 14px;
         }
   
         &:hover {
