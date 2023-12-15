@@ -12,6 +12,11 @@
     
       @include viewport-desktop {
         grid-template-columns: repeat(3, 1fr);
+        gap: px-to-rem(50);
+
+        @media (min-width: 1400px) {
+          gap: px-to-rem(80);
+        }
       }
       
       @include viewport-tablet {
@@ -32,75 +37,234 @@
   //.services-item
   &-item {
 
-    //.services-item__header
-    &__header {
+    //.services-item-header
+    &-header {
+      @include viewport-desktop {
+        --left-shift: #{px-to-rem(18)};
+      }
+
+      @include viewport-tablet {
+        --left-shift: #{px-to-rem(12)};
+      }
+
+      @include viewport-phone {
+        --left-shift: #{px-to-rem(12)};
+      }
+      
+
       position: relative;
-      display: block;
+      z-index: 0;
+
+      display: flex;
+      align-items: center;
+
+      @include transition(color 0.4s);
+      text-decoration: unset;
       color: var(--color-black);
-      transition: 0.4s ease;
       
       &:hover {
         color: var(--color-white);
       }
 
-      svg {
-        @include viewport-desktop {
-          width: 100%;
-        }
-        
-        @include viewport-tablet {
-          width: 100%;
-        }
-      
-        @include viewport-phone {
+      //.services-item-header__label 
+      &__label {
+        position: relative;
+        z-index: 1;
 
-          @media (max-width: 450px) {
-            width: 100%;
+        flex-shrink: 0;
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        // background-color: var(--color-white);
+
+        @include viewport-desktop {
+          max-width: px-to-rem(108);
+        }
+
+        @include viewport-tablet {
+          max-width: px-to-rem(80);
+        }
+
+        @include viewport-phone {
+          max-width: px-to-rem(80);
+        }
+
+        svg {
+          width: 100%;
+          height: auto;
+
+          // @include transition(transform 0.4s);
+
+
+          // @at-root .services-item-header:hover .services-item-header__label svg {
+          //   @include non-mobile-device {
+          //     transform: rotate(180deg);
+          //   }
+          // }
+
+          .line-black,
+          .line-pink {
+            @include transition(fill 0.4s);
+          }
+
+          .line-black {
+            @at-root .services-item-header:hover .services-item-header__label svg .line-black {
+              @include non-mobile-device {
+                fill: var(--color-pink);
+              }
+            }
+            
+            @at-root .services-item-header:focus-visible .services-item-header__label svg .line-black {
+              @include non-mobile-device {
+                fill: var(--color-pink);
+              }
+            }
+          }
+
+          .line-pink {
+            @at-root .services-item-header:hover .services-item-header__label svg .line-pink {
+              @include non-mobile-device {
+                fill: var(--color-black-100);
+              }
+            }
+            
+            @at-root .services-item-header:focus-visible .services-item-header__label svg .line-pink {
+              @include non-mobile-device {
+                fill: var(--color-black-100);
+              }
+            }
+          }
+
+          .hover-element {
+            @include transition(opacity 0.4s);
+            opacity: 0;
+
+            @at-root .services-item-header:hover .services-item-header__label svg .hover-element {
+              @include non-mobile-device {
+                opacity: 1;
+              }
+            }
+            
+            @at-root .services-item-header:focus-visible .services-item-header__label svg .hover-element {
+              @include non-mobile-device {
+                opacity: 1;
+              }
+            }
           }
         }
       }
 
-      span { 
-        color: inherit;
+      //.services-item-header__title 
+      &__title {
+        display: block;
+        width: 100%;
+
+        padding: px-to-rem(10) px-to-rem(30) px-to-rem(10) calc(var(--left-shift) + #{px-to-rem(10)});
+        margin-left: calc(-1 * var(--left-shift));
+        border-radius: 0 px-to-rem(18) px-to-rem(18) 0;
+        // border-radius: px-to-rem(18);
+
+        @include transition(background 0.4s);
+
         text-align: center;
         font-family: Montserrat;
         font-weight: 600;
         line-height: 110%;
-        position: absolute;
+        
+        color: inherit;
+        background-color: var(--color-pink);
+
+        @at-root .services-item-header:hover & {
+          @include non-mobile-device {
+            background-color: var(--color-black-100);
+          }
+        }
+
+        @at-root .services-item-header:focus-visible & {
+          @include non-mobile-device {
+            background-color: var(--color-black-100);
+          }
+        }
 
         @include viewport-desktop {
-          left: 35%;
-          top: 39px;
-          font-size: 23px;
-
           @media (max-width: 1500px) {
-            top: 42px;
-            left: 32%;
             font-size: 20px;
           }
         }
-        
+            
         @include viewport-tablet {
-          left: 35%;
-          top: 39px;
           font-size: 23px;
         }
-      
+          
         @include viewport-phone {
-          left: 168px;
-          top: 44px;
           font-size: 16px;
-
-          @media (max-width: 450px) {
-            left: 38%;
-          }
         }
       }
-    }
-    //.services-item__sublist
-    &__sublist {
+
+      // svg {
+      //   @include viewport-desktop {
+      //     width: 100%;
+      //   }
+        
+      //   @include viewport-tablet {
+      //     width: 100%;
+      //   }
       
+      //   @include viewport-phone {
+
+      //     @media (max-width: 450px) {
+      //       width: 100%;
+      //     }
+      //   }
+      // }
+
+      // span { 
+      //   color: inherit;
+      //   text-align: center;
+      //   font-family: Montserrat;
+      //   font-weight: 600;
+      //   line-height: 110%;
+      //   position: absolute;
+
+      //   @include viewport-desktop {
+      //     left: 35%;
+      //     top: 39px;
+      //     font-size: 23px;
+
+      //     @media (max-width: 1500px) {
+      //       top: 42px;
+      //       left: 32%;
+      //       font-size: 20px;
+      //     }
+      //   }
+        
+      //   @include viewport-tablet {
+      //     left: 35%;
+      //     top: 39px;
+      //     font-size: 23px;
+      //   }
+      
+      //   @include viewport-phone {
+      //     left: 168px;
+      //     top: 44px;
+      //     font-size: 16px;
+
+      //     @media (max-width: 450px) {
+      //       left: 38%;
+      //     }
+      //   }
+      // }
     }
+
+
+
+    //.services-item__sublist
+    // &__sublist {
+      
+    // }
   }
 
   //.services-sublist
