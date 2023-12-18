@@ -1,7 +1,7 @@
-section.form-footer
+section.form-footer(class=footerForm.class)
   ._container
     .form-footer__wrapper
-      div.form-footer__form.form-dark
+      div.form-footer__form(class=footerForm.formClass)
         form
           div
             input(type="text", placeholder="Прізвище*") 
@@ -12,12 +12,12 @@ section.form-footer
 
           div 
             select(name="clinic") 
-              option(value="null", selected) Вибрати клініку
+              option(value="null", selected)!= footerForm.selectLabel
               option(value="Голосіївський") Голосіївський
               option(value="Оболонський") Оболонський
             
-            input(type="submit", value="ЗАПИСАТИСЬ")
+            input(type="submit", value=footerForm.btn)
           
       .form-footer__img
-        img(src=require('@/assets/img/form-footer-bg.png'), alt="form-footer")
+        img(src=require(footerForm.img), alt="form-footer")
           

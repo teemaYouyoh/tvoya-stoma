@@ -5,7 +5,13 @@
   overflow: hidden;
   padding: 0;
   
-  color: var(--color-white);
+
+  &.form-dark {
+    color: var(--color-white);
+  }
+  &.form-light {
+    color: var(--color-black);
+  }
   
   //.form-footer__wrapper 
   &__wrapper {
@@ -13,10 +19,42 @@
     display: flex;
     justify-content: flex-end;
     width: 100%;
-    background-color: var(--color-black);
     border-radius: 0 0 50px 50px;
 
     overflow: hidden;
+
+    @at-root .form-dark .form-footer__wrapper {
+      background-color: var(--color-black);
+    }
+
+    @include viewport-tablet-min {
+      padding: 64px 60px 116px;
+    }
+    @include viewport-phone {
+      padding: 32px 24px 64px;
+     
+
+      @media (max-width: 540px) {
+        border-radius: 0 0 16px 16px;
+        padding: 32px 10px;
+      }
+    }
+  }
+  &__wrapper {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    border-radius: 0 0 50px 50px;
+
+    overflow: hidden;
+
+    @at-root .form-dark .form-footer__wrapper {
+      background-color: var(--color-black);
+    }
+    @at-root .form-light .form-footer__wrapper {
+      background-color: var(--color-white);
+    }
 
     @include viewport-tablet-min {
       padding: 64px 60px 116px;

@@ -231,7 +231,18 @@ form {
 
   button[type=submit],
   input[type=submit] {
-    @include button-light;
+    @at-root .form-dark  input[type=submit] {
+      @include button-light;
+    }
+    @at-root .form-dark  button[type=submit] {
+      @include button-light;
+    }
+    @at-root .form-light input[type=submit] {
+      @include button-dark;
+    }
+    @at-root .form-light button[type=submit] {
+      @include button-dark;
+    }
 
     background-color: var(--color-reverse);
 

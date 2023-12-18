@@ -1,0 +1,45 @@
+-
+  const breadcrumbsName = 'Пропозиції';
+
+  const sliderParam = {
+    'img': '@/assets/img/offers-slide.jpg',
+    'title': 'TVOYA спеціальна пропозиція',
+    'class': 'h1'
+  }
+
+  const footerForm = {
+    'class': 'form-light',
+    'btn': 'Скористатися пропозицією',
+    'formClass': 'form-light',
+    'selectLabel': 'Вибрати акцію',
+    'img': '@/assets/img/form-footer-bg-light.png',
+  }
+
+
+doctype html
+html(lang='ua')
+  head
+    include @/layout/head.pug
+
+    title Пропозиції
+
+    link(rel='stylesheet', href=require('@/styles/pages/offers.scss'))
+
+  body
+    include @/layout/header.pug
+
+    include @/templates/search.pug
+
+    main
+      ._container
+        .main-wrapper
+
+          include @/templates/intime-slider.pug
+
+
+    include @/templates/form-footer.pug
+
+    include @/layout/footer.pug
+
+
+    script(src=require('../index.ts')) 
