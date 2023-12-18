@@ -96,47 +96,47 @@
           width: 100%;
           height: auto;
 
-          // @include transition(transform 0.4s);
+          @include transition(transform 0.4s);
 
 
-          // @at-root .services-item-header:hover .services-item-header__label svg {
-          //   @include non-mobile-device {
-          //     transform: rotate(180deg);
-          //   }
-          // }
+          @at-root .services-item-header:hover .services-item-header__label svg {
+            @include non-mobile-device {
+              transform: rotate(180deg);
+            }
+          }
 
           .line-black,
           .line-pink {
             @include transition(fill 0.4s);
           }
 
-          .line-black {
-            @at-root .services-item-header:hover .services-item-header__label svg .line-black {
-              @include non-mobile-device {
-                fill: var(--color-pink);
-              }
-            }
+          // .line-black {
+          //   @at-root .services-item-header:hover .services-item-header__label svg .line-black {
+          //     @include non-mobile-device {
+          //       fill: var(--color-pink);
+          //     }
+          //   }
             
-            @at-root .services-item-header:focus-visible .services-item-header__label svg .line-black {
-              @include non-mobile-device {
-                fill: var(--color-pink);
-              }
-            }
-          }
+          //   @at-root .services-item-header:focus-visible .services-item-header__label svg .line-black {
+          //     @include non-mobile-device {
+          //       fill: var(--color-pink);
+          //     }
+          //   }
+          // }
 
-          .line-pink {
-            @at-root .services-item-header:hover .services-item-header__label svg .line-pink {
-              @include non-mobile-device {
-                fill: var(--color-black-100);
-              }
-            }
+          // .line-pink {
+          //   @at-root .services-item-header:hover .services-item-header__label svg .line-pink {
+          //     @include non-mobile-device {
+          //       fill: var(--color-black-100);
+          //     }
+          //   }
             
-            @at-root .services-item-header:focus-visible .services-item-header__label svg .line-pink {
-              @include non-mobile-device {
-                fill: var(--color-black-100);
-              }
-            }
-          }
+          //   @at-root .services-item-header:focus-visible .services-item-header__label svg .line-pink {
+          //     @include non-mobile-device {
+          //       fill: var(--color-black-100);
+          //     }
+          //   }
+          // }
 
           .hover-element {
             @include transition(opacity 0.4s);
@@ -160,7 +160,6 @@
       //.services-item-header__title 
       &__title {
         display: block;
-        width: 100%;
 
         padding: px-to-rem(10) px-to-rem(30) px-to-rem(10) calc(var(--left-shift) + #{px-to-rem(10)});
         margin-left: calc(-1 * var(--left-shift));
@@ -190,13 +189,16 @@
         }
 
         @include viewport-desktop {
+          font-size: 23px;
           @media (max-width: 1500px) {
             font-size: 20px;
+            width: 100%;
           }
         }
             
         @include viewport-tablet {
           font-size: 23px;
+          width: 100%;
         }
           
         @include viewport-phone {
@@ -273,12 +275,14 @@
     @include viewport-tablet-min {
       padding-left: 26%;
       padding-right: 8px;
+      margin-top: 16px;
     }
   
     @include viewport-phone {
       padding-left: 16%;
       padding-right: 8px;
       max-width: 422px;
+      margin-top: 8px;
     }
     
     //.services-sublist__item
