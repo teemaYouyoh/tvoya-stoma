@@ -114,6 +114,10 @@ main .main-wrapper {
   @include button-light;
 }
 
+.button-pink {
+  @include button-pink;
+}
+
 section,
 .section {
   overflow-x: hidden;
@@ -287,7 +291,9 @@ section,
 }
 
 .inner-wrapper {
+  position: relative;
   background-color: var(--color-white);
+  overflow: hidden;
 
   @include viewport-desktop {
     padding: 28px 24px;
@@ -331,6 +337,7 @@ section,
 @import './layout/banner-services';
 @import './layout/services-list';
 @import './layout/service-inner';
+@import './layout/franchising';
 // @import './layout/about-info';
 // @import './layout/separate';
 // @import './layout/immigration-services';

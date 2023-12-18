@@ -78,7 +78,7 @@
 
   a {
     display: inline-block;
-    color: var(--color-blue-100);
+    color: var(--color-pink);
     text-underline-offset: px-to-rem(4);
     text-decoration-thickness: 0.5px;
     
@@ -107,11 +107,6 @@
         left: 0;
         width: var(--marker-size);
         height: var(--marker-size);
-
-        background-image: url('@/assets/img/star.svg');
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: contain;
       }
     }
 

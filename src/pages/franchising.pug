@@ -1,0 +1,28 @@
+-
+  const breadcrumbsName = 'Франчайзинг';
+
+doctype html
+html(lang='ua')
+  head
+    include @/layout/head.pug
+
+    title Франчайзинг
+
+    link(rel='stylesheet', href=require('@/styles/pages/franchising.scss'))
+
+  body
+    include @/layout/header.pug
+    
+    include @/templates/search.pug
+
+    include @/templates/breadcrumbs.pug
+
+    main.inner
+      ._container
+        include @/templates/franchising.pug
+      
+
+    include @/layout/footer.pug
+
+    //- script(src=require('@/scripts/video.ts')) 
+    script(src=require('../index.ts')) 

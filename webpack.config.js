@@ -8,6 +8,7 @@ const pageNames = [
   'about',
   'services',
   'service',
+  'franchising',
 ];
 
 const pages = pageNames.map((name) => {

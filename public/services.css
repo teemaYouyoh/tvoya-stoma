@@ -5909,6 +5909,11 @@ html:not(.v-mobile) .services-item-header:focus-visible .services-item-header__t
   background-color: var(--color-black-100);
 }
 
+@media (min-width: 1200px) {
+  .services-item-header__title {
+    font-size: 23px;
+  }
+}
 @media (min-width: 1200px) and (max-width: 1500px) {
   .services-item-header__title {
     font-size: 20px;
@@ -6100,68 +6105,132 @@ html:not(.v-mobile) .services-item-header:focus-visible .services-item-header__t
   background-color: var(--color-black);
   color: var(--color-white);
 }
-.service-item__header {
+.service-item-header {
   position: relative;
-  display: block;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  transition: color 0.4s;
+  transition-delay: 0s;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  text-decoration: unset;
   color: var(--color-black);
-  transition: 0.4s ease;
-}
-.service-item__header:hover {
-  color: var(--color-white);
 }
 @media (min-width: 1200px) {
-  .service-item__header svg {
-    width: 100%;
+  .service-item-header {
+    --left-shift: 1.125rem;
   }
 }
 @media (min-width: 900px) and (max-width: 1199px) {
-  .service-item__header svg {
-    width: 100%;
+  .service-item-header {
+    --left-shift: 0.75rem;
   }
 }
-@media (max-width: 899px) and (max-width: 450px) {
-  .service-item__header svg {
-    width: 100%;
+@media (max-width: 899px) {
+  .service-item-header {
+    --left-shift: 0.75rem;
   }
 }
-.service-item__header span {
-  color: inherit;
+.service-item-header:hover {
+  color: var(--color-white);
+}
+.service-item-header__label {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 1200px) {
+  .service-item-header__label {
+    max-width: 6.75rem;
+  }
+}
+@media (min-width: 900px) and (max-width: 1199px) {
+  .service-item-header__label {
+    max-width: 5rem;
+  }
+}
+@media (max-width: 899px) {
+  .service-item-header__label {
+    max-width: 5rem;
+  }
+}
+.service-item-header__label svg {
+  width: 100%;
+  height: auto;
+  transition: transform 0.4s;
+  transition-delay: 0s;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+html:not(.v-mobile) .service-item-header:hover .service-item-header__label svg {
+  transform: rotate(180deg);
+}
+
+.service-item-header__label svg .line-black,
+.service-item-header__label svg .line-pink {
+  transition: fill 0.4s;
+  transition-delay: 0s;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.service-item-header__label svg .hover-element {
+  transition: opacity 0.4s;
+  transition-delay: 0s;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  opacity: 0;
+}
+html:not(.v-mobile) .service-item-header:hover .service-item-header__label svg .hover-element {
+  opacity: 1;
+}
+
+html:not(.v-mobile) .service-item-header:focus-visible .service-item-header__label svg .hover-element {
+  opacity: 1;
+}
+
+.service-item-header__title {
+  display: block;
+  padding: 0.625rem 1.875rem 0.625rem calc(var(--left-shift) + 0.625rem);
+  margin-left: calc(-1 * var(--left-shift));
+  border-radius: 0 1.125rem 1.125rem 0;
+  transition: background 0.4s;
+  transition-delay: 0s;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
   text-align: center;
   font-family: Montserrat;
   font-weight: 600;
   line-height: 110%;
-  position: absolute;
+  color: inherit;
+  background-color: var(--color-pink);
 }
+html:not(.v-mobile) .service-item-header:hover .service-item-header__title {
+  background-color: var(--color-black-100);
+}
+
+html:not(.v-mobile) .service-item-header:focus-visible .service-item-header__title {
+  background-color: var(--color-black-100);
+}
+
 @media (min-width: 1200px) {
-  .service-item__header span {
-    left: 35%;
-    top: 39px;
+  .service-item-header__title {
     font-size: 23px;
   }
 }
 @media (min-width: 1200px) and (max-width: 1500px) {
-  .service-item__header span {
-    top: 42px;
-    left: 32%;
+  .service-item-header__title {
     font-size: 20px;
+    width: 100%;
   }
 }
 @media (min-width: 900px) and (max-width: 1199px) {
-  .service-item__header span {
-    left: 35%;
-    top: 39px;
+  .service-item-header__title {
     font-size: 23px;
+    width: 100%;
   }
 }
 @media (max-width: 899px) {
-  .service-item__header span {
-    left: 168px;
-    top: 44px;
+  .service-item-header__title {
     font-size: 16px;
-  }
-}
-@media (max-width: 899px) and (max-width: 450px) {
-  .service-item__header span {
-    left: 38%;
   }
 }
