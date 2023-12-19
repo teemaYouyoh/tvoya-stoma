@@ -11,6 +11,8 @@ const pageNames = [
   'franchising',
   'offers',
   'contacts',
+  'fix-price',
+  'news',
 ];
 
 const pages = pageNames.map((name) => {

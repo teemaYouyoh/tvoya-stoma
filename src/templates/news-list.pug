@@ -1,0 +1,48 @@
+-
+  const newsList = [
+    {
+      href: './news-inner.html',
+      title: 'Ми відкрилися',
+      img: '@/assets/img/news/news-1.jpg',
+    },
+    {
+      href: './news-inner.html',
+      title: 'Ми відкрилися',
+      img: '@/assets/img/news/news-2.jpg',
+    },
+    {
+      href: './news-inner.html',
+      title: 'Ми відкрилися',
+      img: '@/assets/img/news/news-3.jpg',
+    },
+    {
+      href: './news-inner.html',
+      title: 'Новини в методиці лікування',
+      img: '@/assets/img/news/news-1.jpg',
+    },
+    {
+      href: './news-inner.html',
+      title: 'Новини в методиці лікування',
+      img: '@/assets/img/news/news-2.jpg',
+    },
+    {
+      href: './news-inner.html',
+      title: 'Новини в методиці лікування',
+      img: '@/assets/img/news/news-3.jpg',
+    },
+   
+  ];
+
+section.news-list
+
+  .news-list__header
+    h1.news-list__title Новини
+    button.news-list__tutton.button-pink ВСІ НОВИНИ
+
+  .news-list__wrapper
+    each item in newsList
+      a.news-list-item(href=item.href)
+        .news-list-item__image
+          img(src=require(item.img), alt=item.title)
+        p.news-list-item__title!= item.title
+        

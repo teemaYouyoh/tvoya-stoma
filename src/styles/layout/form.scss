@@ -266,6 +266,7 @@ form {
 
       color: unset;
       background-color: transparent;
+      border: none;
       
       @include hover-focus-visible {
         @include non-mobile-device {
