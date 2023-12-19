@@ -21,28 +21,66 @@
   }
 
 
-  //.franchising__bg
-  &__bg {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: block;
+  //.franchising-bg
+  &-bg {
+    width: 100%;
     min-height: 100%;
-    width: 43%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url('@/assets/img/franchising/background.png');
+    background-repeat: repeat;
+    background-position: 0 0;
+    background-size: contain;
 
     @include viewport-desktop {
-      background-image: url('@/assets/img/franchising-bg.svg');
+      max-width: 320px;
+      
+      @media (min-width: 1441px) {
+        max-width: 508px;
+      }
+      // @media (min-width: 1400px) {
+      //   max-width: 508px;
+      // }
+    }
+    
+    @include viewport-tablet-max {
+      display: none;
     }
 
-    @include viewport-tablet-max {
-      background-image: url('@/assets/img/franchising-bg-mob.svg');
-      position: absolute;
-      top: 0;
-      right: 0;
+    //.franchising-bg__circle 
+    &__circle {
+      max-width: px-to-rem(234);
       width: 100%;
-      height: 100%;
-      z-index: 1;
+
+      svg {
+        width: 100%;
+        height: auto;
+      }
     }
+
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    // background-position: center;
+    // display: block;
+    // min-height: 100%;
+    // width: 43%;
+
+    // @include viewport-desktop {
+    //   background-image: url('@/assets/img/franchising-bg.svg');
+    // }
+
+    // @include viewport-tablet-max {
+    //   background-image: url('@/assets/img/franchising-bg-mob.svg');
+    //   position: absolute;
+    //   top: 0;
+    //   right: 0;
+    //   width: 100%;
+    //   height: 100%;
+    //   z-index: 1;
+    // }
   }
 
   //.franchising__wrapper
@@ -53,16 +91,25 @@
 
     @include viewport-desktop {
       padding: 28px 24px;
-      width: 55%;
-      max-width: 822px;
+      width: 100%;
+      // max-width: 822px;
     }
 
     @include viewport-tablet {
       padding: 28px 22px;
+
+      background-image: url('@/assets/img/franchising/background.png');
+      background-repeat: repeat;
+      background-position: 0 0;
+      background-size: contain;
     }
 
     @include viewport-phone {
       padding: 20px 12px;
+      background-image: url('@/assets/img/franchising/background.png');
+      background-repeat: repeat;
+      background-position: 0 0;
+      background-size: contain;
     }
   }
 
@@ -105,21 +152,84 @@
     }
   }
 
-  //.franchising__circle
-  &__circle {
-    @include viewport-desktop {
-      display: none;
+  //.franchising-circle
+  &-circle {
+    position: relative;
+    z-index: 0;
+
+    &.desktop {
+      @include viewport-tablet-max {
+        display: none;
+      }
     }
 
-    @include viewport-tablet {
-      display: block;
-      margin: 76px auto 0;
+    &.mobile {
+      @include viewport-desktop {
+        display: none;
+      }
     }
 
-    @include viewport-phone {
-      display: block;
+    // @include viewport-tablet {
+    //   display: block;
+    //   margin: 76px auto 0;
+    // }
+
+    @include viewport-tablet-max {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      max-width: 412px;
       margin: 24px auto 0;
-      max-width: 113px;
+
+      @media (max-width: 450px) {
+        max-width: 113px;
+      }
+    }
+
+    svg, 
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    .visible {
+      width: 100%;
+      height: auto;
+
+      .line-pink {
+        @include viewport-desktop {
+          opacity: 0;
+        }
+      }
+    }
+
+    .hover {
+      @include viewport-desktop {
+        @include absolute-fullsize;
+        z-index: 0;
+
+        width: 100%;
+        height: 100%;
+
+        @include transition(transform 8s);
+        transform: translate(0, 100%);
+
+      }
+
+      @include viewport-tablet-max {
+        display: none;
+      }
+
+      @at-root .franchising-circle.viewed .hover {
+        @include viewport-desktop {
+          transform: translate(0, -2px);
+        }
+      }
+
+      .line-black {
+        opacity: 0;
+      }
     }
   }
 

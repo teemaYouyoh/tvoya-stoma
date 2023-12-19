@@ -5,6 +5,7 @@ interface IUseObserverProps {
   callbackIn?: TCallback;
   callbackOut?: TCallback;
   isCallOnce?: boolean;
+  threshold?: number;
 }
 
 const useObserver: (
@@ -13,7 +14,8 @@ const useObserver: (
   target,
   callbackIn,
   callbackOut,
-  isCallOnce = false
+  isCallOnce = false,
+  threshold = 0
 }) => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(
@@ -39,7 +41,7 @@ const useObserver: (
       },
       {
         root: null,
-        threshold: 0,
+        threshold: threshold,
         rootMargin: '0px 0px 0px 0px'
       }
     );

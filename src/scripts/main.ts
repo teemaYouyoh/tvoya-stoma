@@ -1,4 +1,5 @@
 import accordionInit from './accordion/init';
+import circleAnimationOberver from './circleAnimationObserver/init';
 import counterInit from './counter/init';
 import fadeContentInit from './fadeContent/init';
 import imageAppearInit from './imageAppear/init';
@@ -22,6 +23,8 @@ export const init = () => {
 
   fadeContentInit();
   imageAppearInit();
+
+  circleAnimationOberver();
 
   // const header = document.querySelector('.header') as HTMLElement;
   // // const headerHeight = header ? header.offsetHeight : 0;
