@@ -1,0 +1,120 @@
+@import '../base';
+
+.fix-price-form {
+  @include viewport-phone {
+    padding: 0 4px;
+  }
+  
+  //.fix-price-form__wrapper
+  &__wrapper {
+    background-color: var(--color-white);
+    display: flex;
+    justify-content: space-between;
+
+    @include viewport-tablet-min {
+      align-items: center;
+    }
+
+    @include viewport-phone {
+      flex-direction: column;
+      margin-top: 24px;
+    }
+
+    >*+* {
+      @include viewport-phone {
+        margin-top: 28px;
+      }
+    }
+  }
+
+  //.fix-price-form__form
+  &__form {
+    @include viewport-tablet-min {
+      width: 49%;
+    }
+    @include viewport-phone {
+      margin: 0 auto;
+      width: 80%;
+    }
+  }
+
+  //.fix-price-form__map
+  &__map {
+
+     //.fix-price-form__map-img
+     &-img {
+      position: relative;
+      display: block;
+      padding-top: 75%;
+
+      @include viewport-desktop {
+        width: 564px;
+
+        @media (max-width: 1480px) {
+          width: 361px;
+        }
+      }
+      @include viewport-tablet {
+        width: 361px;
+      }
+      @include viewport-phone {
+        width: 80%;
+        padding-top: 60%;
+
+        @media (max-width: 540px) {
+          padding-top: 75%;
+          width: 100%;
+        }
+      }
+
+      img {
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+     }
+    
+
+    //.fix-price-form__map-more
+    &-more {
+      a {
+        font-weight: 300;
+        line-height: 30px;
+        color: var(--color-black);
+        transition: 0.3s ease;
+        text-decoration: none;
+  
+        @include viewport-desktop {
+          font-size: 25px;
+
+          @media (max-width: 1480px) {
+            font-size: 20px;
+          }
+        }
+        @include viewport-tablet {
+          font-size: 20px;
+        }
+        @include viewport-phone {
+          font-size: 16px;
+        }
+  
+        &:hover {
+          color: var(--color-pink);
+        }
+      }
+    }
+
+    >*+* {
+      @include viewport-tablet-min {
+        margin-top: 18px;
+      }
+      @include viewport-phone {
+        margin-top: 0;
+      }
+    }
+  }
+}
