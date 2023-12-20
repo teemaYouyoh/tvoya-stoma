@@ -1,33 +1,12 @@
 -
   const menuPopupList = [
     {
-      name: ' Експрес запис',
-      href: '#',
-    },
-    {
       name: ' Послуги',
       href: './services.html',
     },
     {
       name: 'ТVOYA  ціна',
       href: './fix-price.html',
-      submenu: [
-        {
-          name: 'sub 1',
-          href: '#',
-          goto: 'false',
-        },
-        {
-          name: 'sub 2',
-          href: '#',
-          goto: 'false',
-        },
-        {
-          name: 'sub 3',
-          href: '#',
-          goto: 'false',
-        },
-      ],
     },
     {
       name: 'Пропозиції',
@@ -35,7 +14,19 @@
     },
     {
       name: 'Знайомство з TVOYA',
-      href: './team.html',
+      href: '#',
+      submenu: [
+        {
+          name: 'Про нас',
+          href: './about.html',
+          goto: 'false',
+        },
+        {
+          name: 'Новини',
+          href: './news.html',
+          goto: 'false',
+        }
+      ],
     },
     {
       name: 'Як знайти?',
@@ -43,7 +34,7 @@
     },
     {
       name: 'Вакансії',
-      href: './contacts.html',
+      href: './vacancy.html',
     },
     {
       name: 'Франчайзинг',
@@ -56,6 +47,15 @@ button.popup__close
 
 nav.menu
   ul.menu-list.accordion(data-is-label-click='true')
+
+    li.menu-list__item
+        .menu-list__item__header
+          a.menu__link(
+            class="popup-open",
+            href=`#`,
+            data-popup=`_popup-form`
+          ) Експрес запис
+
     each item in menuPopupList
       li.menu-list__item(
         class=`${item.submenu && item.submenu.length !== 0 ? 'accordion__item' : ''}`

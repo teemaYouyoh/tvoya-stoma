@@ -1,25 +1,43 @@
 -
-  const innerBanner = {
-    image: '',
-    title: 'Про Persona Patman'
-  };
   const breadcrumbsName = 'Про нас';
+     
+  const footerForm = {
+    'class': 'form-dark',
+    'btn': 'ЗАПИСАТИСЬ',
+    'formClass': 'form-dark',
+    'selectLabel': 'Вибрати клініку',
+    'img': '@/assets/img/form-footer-bg.png',
+  }
 
 doctype html
 html(lang='en')
   head
     include @/layout/head.pug
 
-    title Persona Patman - About
+    title Про нас
 
-    //- link(rel='stylesheet', href=require('@/styles/pages/about.scss'))
+    link(rel='stylesheet', href=require('@/styles/pages/about.scss'))
 
   body
     include @/layout/header.pug
+    
+    include @/templates/search.pug
 
-    //- include @/templates/breadcrumbs.pug
+    include @/templates/breadcrumbs.pug
 
-    //- include @/templates/banner-inner.pug
+    include @/templates/banner-about.pug
+
+    main.inner
+      ._container
+        .main-wrapper
+
+          include @/templates/about-list.pug
+          
+          include @/templates/about-why.pug
+
+          include @/templates/addresses.pug
+      
+    include @/templates/form-footer.pug
 
     include @/layout/footer.pug
 
