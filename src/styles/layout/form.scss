@@ -70,7 +70,7 @@ textarea {
     border-color: var(--color-pink);
   }
 
-  &:placeholder {
+  &::placeholder {
     font-size: inherit;
     font-weight: inherit;
     line-height: inherit;

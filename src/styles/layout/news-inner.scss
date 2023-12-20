@@ -1,0 +1,118 @@
+@import '../base';
+
+.news-inner {
+  //.news-inner__title
+  &__title {
+    @include text-heading-1;
+    color: var(--color-pink);
+    max-width: 1054px;
+  }
+  //.news-inner__content
+  &__content {
+
+    @include viewport-desktop {
+      margin-top: 144px;
+    }
+    @include viewport-tablet {
+      margin-top: 60px;
+    }
+    @include viewport-phone {
+      margin-top: 24px;
+    }
+
+    > * + * {
+      @include viewport-desktop {
+        margin-top: 108px;
+      }
+      @include viewport-tablet {
+        margin-top: 60px;
+      }
+      @include viewport-phone {
+        margin-top: 24px;
+      }
+    }
+  }
+  //.news-inner__text
+  &__text {
+    font-weight: 500;
+    line-height: normal;
+   
+    @include viewport-tablet-min {
+      font-size: 24px;
+    }
+    @include viewport-phone {
+      font-size: 16px;
+    }
+  }
+  //.news-inner__text-img
+  &__text-img {
+    display: flex;
+    justify-content: space-between;
+
+    @include viewport-desktop {
+    }
+    @include viewport-tablet {
+      margin-top: 60px;
+    }
+    @include viewport-phone {
+      flex-direction: column;
+    }
+    
+    .news-inner__text {
+
+      @include viewport-desktop {
+        width: 30%;
+      }
+      @include viewport-tablet {
+        width: 50%;
+      }
+      @include viewport-phone {
+        width: 100%;
+      }
+    }
+  }
+  //.news-inner__img
+  &__img {
+    text-align: center;
+
+    @include viewport-desktop {
+      width: 60%;
+    }
+    @include viewport-tablet {
+      width: 45%;
+    }
+    @include viewport-phone {
+      text-align: left;
+      width: 100%;
+      margin-top: 24px;
+    }
+
+    img {
+      width: 100%;
+      @include viewport-phone {
+        max-width: 300px;
+      }
+    }
+  }
+
+  //.news-inner__button
+  &__button {
+    transition: 0.3s ease;
+
+    @include viewport-desktop {
+      margin-top: 108px;
+    }
+    @include viewport-tablet {
+      margin-top: 60px;
+    }
+    @include viewport-phone {
+      margin-top: 24px;
+    }
+
+    @include hover-focus-visible {
+      @include non-mobile-device {
+        background-color: var(--color-black);
+      }
+    }
+  }
+}

@@ -76,6 +76,26 @@ ol {
 main .main-wrapper {
   background-color: var(--color-white);
 }
+main.page-offers .main-wrapper {
+  position: relative;
+  background-color: var(--color-white);
+  overflow: hidden;
+
+  @include viewport-desktop {
+    padding: 28px 24px;
+    border-radius: 54px 54px 0 0;
+  }
+
+  @include viewport-tablet {
+    padding: 28px 22px;
+    border-radius: 54px 54px 0 0;
+  }
+
+  @include viewport-phone {
+    padding: 20px 12px;
+    border-radius: 24px 24px 0 0;
+  }
+}
 
 .custom-logo-link {
   display: flex;
@@ -341,6 +361,7 @@ section,
 @import './layout/fix-price-list';
 @import './layout/fix-price-form';
 @import './layout/news-list';
+@import './layout/news-inner';
 // @import './layout/about-info';
 // @import './layout/separate';
 // @import './layout/immigration-services';

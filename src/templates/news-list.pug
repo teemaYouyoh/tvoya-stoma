@@ -1,22 +1,37 @@
 -
   const newsList = [
     {
-      href: './news-inner.html',
+      href: './news-single.html',
       title: 'Ми відкрилися',
       img: '@/assets/img/news/news-1.jpg',
     },
     {
-      href: './news-inner.html',
+      href: './news-single.html',
       title: 'Ми відкрилися',
       img: '@/assets/img/news/news-2.jpg',
     },
     {
-      href: './news-inner.html',
+      href: './news-single.html',
       title: 'Ми відкрилися',
       img: '@/assets/img/news/news-3.jpg',
     },
     {
-      href: './news-inner.html',
+      href: './news-single.html',
+      title: 'Новини в методиці лікування',
+      img: '@/assets/img/news/news-1.jpg',
+    },
+    {
+      href: './news-single.html',
+      title: 'Новини в методиці лікування',
+      img: '@/assets/img/news/news-2.jpg',
+    },
+    {
+      href: './news-single.html',
+      title: 'Новини в методиці лікування',
+      img: '@/assets/img/news/news-3.jpg',
+    },
+    {
+      href: './news-single.html',
       title: 'Новини в методиці лікування',
       img: '@/assets/img/news/news-1.jpg',
     },
@@ -37,7 +52,7 @@ section.news-list
 
   .news-list__header
     h1.news-list__title Новини
-    button.news-list__tutton.button-pink ВСІ НОВИНИ
+    button.news-list__button.button-pink(onClick="[].forEach.call(document.getElementsByClassName('news-list-item'), function (el) {el.style.display = 'block'});") ВСІ НОВИНИ
 
   .news-list__wrapper
     each item in newsList

@@ -40,6 +40,12 @@
       isFullscreenPhone: 'false'
     },
     { 
+      name: 'price', 
+      type: 'price', 
+      video: '',
+      isFullscreenPhone: 'false'
+    },
+    { 
       name: 'form', 
       type: 'form', 
       video: '',
@@ -62,11 +68,18 @@ each item in popupList
         button.popup__close(
           class=`${item.type === 'menu' || item.type === 'search' ? 'hidden' : ''}`
         )
-          img(
-            class=`${item.isFullscreenPhone === 'true' ? 'desktop' : ''}`,
-            src=require('@/assets/img/popup-close.svg'),
-            alt='close'
-          )
+          if item.type === 'price'
+            img(
+              class=`${item.isFullscreenPhone === 'true' ? 'desktop' : ''}`,
+              src=require('@/assets/img/popup-close-black.svg'),
+              alt='close'
+            )
+          else 
+            img(
+              class=`${item.isFullscreenPhone === 'true' ? 'desktop' : ''}`,
+              src=require('@/assets/img/popup-close.svg'),
+              alt='close'
+            )
 
           if item.isFullscreenPhone === 'true'
             img.mobile(
@@ -98,6 +111,9 @@ each item in popupList
 
               if item.name === 'error'
                 include @/templates/popup/error-popup.pug
+
+            when 'price'
+              include @/templates/popup/price-popup.pug
 
             when 'form'
               include @/templates/popup/form-popup.pug

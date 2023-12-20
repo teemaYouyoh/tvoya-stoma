@@ -70,6 +70,7 @@
 
   //.fix-price-list-item
   &-item {
+    cursor: pointer;
 
     //.fix-price-list-item-header
     &-header {
@@ -84,7 +85,6 @@
       @include viewport-phone {
         --left-shift: #{px-to-rem(12)};
       }
-      
 
       position: relative;
       z-index: 0;

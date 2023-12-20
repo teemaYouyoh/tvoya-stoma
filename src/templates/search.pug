@@ -1,7 +1,7 @@
 .search__container._container
    .search__wrapper
     form.search__form
-      input(type="text", placeholder="Пошук на сайті")
+      input(type="text", placeholder="Пошук на сайті", onfocus="this.placeholder = ''", onblur="this.placeholder = 'Пошук на сайті'")
 
       button(type="submit")
         <svg width="39" height="35" viewBox="0 0 39 35" fill="none" xmlns="http://www.w3.org/2000/svg">

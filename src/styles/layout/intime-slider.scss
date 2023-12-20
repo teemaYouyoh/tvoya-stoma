@@ -2,6 +2,10 @@
 
 .intime {
 
+  @at-root .page-offers .intime {
+    padding: 0;
+  }
+
   //.intime__wrapper
   &__wrapper {
     background-color: var(--color-white);

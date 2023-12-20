@@ -72,7 +72,6 @@ export const init = () => {
             if (inputs.length !== 0) {
               inputs.forEach((inputProp) => {
                 const input = inputProp;
-                input.value = '';
               });
             }
           } else if (isError && hasError) {

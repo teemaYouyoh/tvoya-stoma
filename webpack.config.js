@@ -13,6 +13,7 @@ const pageNames = [
   'contacts',
   'fix-price',
   'news',
+  'news-single',
 ];
 
 const pages = pageNames.map((name) => {
