@@ -1,0 +1,21 @@
+-
+  const vacancyReviews = [
+    {
+      title: 'Тут класно! Марія Марімовна Тут класно Марія Марімовна<br/>Марія Марімовна',
+      img: '@/assets/img/review-1.jpg'
+    },
+    {
+      title: 'Тут класно! <br/>Максим Козаченко',
+      img: '@/assets/img/review-2.jpg'
+    },
+  ];
+
+section.vacancy-reviews
+  h2.vacancy-reviews__title Наші колеги про TVOYA dental studio
+  .vacancy-reviews__wrapper
+    each item in vacancyReviews
+      .vacancy-reviews-item
+        .vacancy-reviews-item__title!= item.title
+        .vacancy-reviews-item__img
+          img(src=require(item.img), alt=item.title)
+        

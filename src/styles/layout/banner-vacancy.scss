@@ -1,0 +1,101 @@
+@import '../base';
+
+.banner-vacancy {
+  position: relative;
+  
+  //.banner-vacancy__title
+  &__title {
+    @include text-heading-1;
+    color: var(--color-pink);
+  }
+  //.banner-vacancy__wrapper
+  &__wrapper {
+    display: flex;
+
+    @include viewport-desktop {
+      justify-content: space-between;
+      margin-top: 76px;
+    }
+    @include viewport-tablet {
+      justify-content: space-between;
+      margin-top: 40px;
+    }
+    
+    @include viewport-phone {
+      flex-direction: column;
+      margin-top: 20px;
+    }
+
+    > * + * {
+      @include viewport-desktop {
+        margin-left: 50px;
+      }
+      @include viewport-tablet {
+        margin-left: 36px;
+      }
+      @include viewport-phone {
+        margin-top: 22px;
+      }
+    }
+
+  }
+  //.banner-vacancy__content
+  &__content {
+    @include viewport-tablet-min {
+      width: 60%;
+    }
+    @include viewport-phone {
+    }
+
+    > p + a {
+      @include viewport-desktop {
+        margin-top: 26px;
+      }
+      @include viewport-tablet {
+        margin-top: 26px;
+      }
+      @include viewport-phone {
+        margin-top: 20px;
+      }
+    }
+    > a + p {
+      @include viewport-desktop {
+        margin-top: 64px;
+      }
+      @include viewport-tablet {
+        margin-top: 40px;
+      }
+      @include viewport-phone {
+        margin-top: 16px;
+      }
+    }
+  }
+  //.banner-vacancy__text
+  &__text {
+    font-weight: 600;
+    line-height: normal;
+
+    @include viewport-tablet-min {
+      font-size: 24px;
+    } 
+    @include viewport-phone {
+      font-size: 14px;
+    }
+  }
+  //.banner-vacancy__button
+  &__button {
+
+  }
+  //.banner-vacancy__img
+  &__img {
+    @include viewport-tablet-min {
+      width: 35%;
+    }
+    @include viewport-phone {
+      max-width: 320px;
+    }
+    img {
+      width: 100%;
+    }
+  }
+}

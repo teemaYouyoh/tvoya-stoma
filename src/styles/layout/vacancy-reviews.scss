@@ -1,0 +1,85 @@
+@import '../base';
+
+.vacancy-reviews {
+    //.vacancy-reviews__title
+    &__title {
+      @include text-heading-2;
+    }
+
+    //.vacancy-reviews__wrapper
+    &__wrapper {
+      width: 100%;
+      display: grid;
+      gap: px-to-rem(80);
+    
+      @include viewport-desktop {
+        grid-template-columns: repeat(2, 1fr);
+        gap: px-to-rem(50);
+        margin-top: 58px;
+
+        @media (min-width: 1400px) {
+          gap: px-to-rem(80);
+        }
+      }
+      
+      @include viewport-tablet {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 58px;
+      }
+    
+      @include viewport-phone {
+        grid-template-columns: 1fr;
+        gap: px-to-rem(48);
+        margin-top: 24px;
+
+        @media (max-width: 450px) {
+          gap: px-to-rem(32);
+        }
+      }
+    }
+
+  //.vacancy-reviews-item
+  &-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    @include viewport-tablet-min {
+      margin: 0 auto;
+    }
+
+    //.vacancy-reviews-item__title 
+    &__title {
+      font-weight: 600;
+      line-height: 110%;
+      width: 60%;
+
+      @include viewport-desktop {
+        font-size: 23px;
+      }
+          
+      @include viewport-tablet {
+        font-size: 23px;
+      }
+        
+      @include viewport-phone {
+        font-size: 16px;
+      }
+    }
+
+     //.vacancy-reviews-item__img
+     &__img{
+      @include viewport-phone {
+        max-width: 72px;
+      }
+
+      img {
+        width: 100%;
+      }
+     }
+
+    > * + * {
+      margin-left: 30px;
+    }
+  }
+}

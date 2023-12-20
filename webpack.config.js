@@ -14,6 +14,7 @@ const pageNames = [
   'fix-price',
   'news',
   'news-single',
+  'vacancy',
 ];
 
 const pages = pageNames.map((name) => {
