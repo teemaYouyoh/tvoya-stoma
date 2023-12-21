@@ -16,6 +16,7 @@ const pageNames = [
   'news-single',
   'vacancy',
   'about',
+  'thanks-page',
 ];
 
 const pages = pageNames.map((name) => {

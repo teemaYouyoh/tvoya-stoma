@@ -65,36 +65,30 @@ export const init = () => {
           >
         );
 
-        popups.forEach(({ timeline, isThanks, isError }) => {
-          if (isThanks && !hasError) {
-            timeline?.play();
+        // popups.forEach(({ timeline, isThanks, isError }) => {
+        //   if (isThanks && !hasError) {
+        //     timeline?.play();
 
-            if (inputs.length !== 0) {
-              inputs.forEach((inputProp) => {
-                const input = inputProp;
-              });
-            }
-          } else if (isError && hasError) {
-            timeline?.play();
-          } else {
-            timeline?.reverse();
-          }
-        });
+        //     if (inputs.length !== 0) {
+        //       inputs.forEach((inputProp) => {
+        //         const input = inputProp;
+        //       });
+        //     }
+        //   } else if (isError && hasError) {
+        //     timeline?.play();
+        //   } else {
+        //     timeline?.reverse();
+        //   }
+        // });
       });
     });
 
-    // document.addEventListener(
-    //   'wpcf7mailsent',
-    //   function () {
-    //     popups.forEach(({ timeline, isThanksPopup }) => {
-    //       if (isThanksPopup) {
-    //         timeline.play();
-    //       } else {
-    //         timeline.reverse();
-    //       }
-    //     });
-    //   },
-    //   false
-    // );
+    document.addEventListener(
+      'wpcf7mailsent',
+      function () {
+        window.location.href = "./thanks-page.html";
+      },
+      false
+    );
   }
 };

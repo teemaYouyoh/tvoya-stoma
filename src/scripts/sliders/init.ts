@@ -44,6 +44,44 @@ const sliderIntimeInit = (sliders: Array<IInitializedSlider>) => {
   });
 };
 
+const sliderBeautifulInit = (sliders: Array<IInitializedSlider>) => {
+  const containerArray = document.querySelectorAll(
+    '.beautiful'
+  ) as NodeListOf<HTMLElement>;
+
+  if (containerArray.length === 0) {
+    return;
+  }
+
+  containerArray.forEach((item, sliderIndex) => {
+    const slider = makeSlider({
+      container: item,
+      className: 'beautiful',
+      renderBullets: (index, className) => {
+        return `
+          <button class="${className}">
+            <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="13.5" cy="13.5" r="11" stroke="white" stroke-width="5"/>
+            </svg>
+          </button>
+        `;
+      },
+      config: {
+        effect: 'slide',
+        allowTouchMove: true,
+        autoplay: {
+          delay: 10000,
+          disableOnInteraction: false
+        }
+      }
+    });
+
+    if (slider) {
+      sliders.push({ name: `banner-${sliderIndex}`, slider });
+    }
+  });
+};
+
 const sliderInfoInit = (sliders: Array<IInitializedSlider>) => {
   const containerArray = document.querySelectorAll(
     '.about-info'
@@ -152,6 +190,7 @@ const slidersInit = () => {
   const sliders: Array<IInitializedSlider> = [];
 
   sliderIntimeInit(sliders);
+  sliderBeautifulInit(sliders);
   sliderInfoInit(sliders);
   sliderServicesInit(sliders);
 

@@ -1,6 +1,16 @@
 -
   const breadcrumbsName = 'Про нас';
-     
+
+  const sliderParam = {
+    'img': [
+      '@/assets/img/about-slider-1.jpg',
+      '@/assets/img/about-slider-2.jpg',
+    ],
+    'title': 'Ясно і вчасно:',
+    'subtitle': 'І готові вас зустрічати. Все для того, щоб ви почувалися максимально комфортно і невимушено.:',
+    'class': 'h2'
+  }
+
   const footerForm = {
     'class': 'form-dark',
     'btn': 'ЗАПИСАТИСЬ',
@@ -34,6 +44,8 @@ html(lang='en')
           include @/templates/about-list.pug
           
           include @/templates/about-why.pug
+
+          include @/templates/about-slider.pug
 
           include @/templates/addresses.pug
       

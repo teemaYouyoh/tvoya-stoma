@@ -331,6 +331,10 @@ section,
   }
 }
 
+.thanks-wrapper {
+  background-image: url('@/assets/img/thanks-page.svg');
+}
+
 //templates
 @import './layout/form';
 @import './layout/header';
@@ -368,6 +372,8 @@ section,
 @import './layout/banner-about';
 @import './layout/about-list';
 @import './layout/about-why';
+@import './layout/about-slider';
+@import './layout/thanks';
 // @import './layout/about-info';
 // @import './layout/separate';
 // @import './layout/immigration-services';

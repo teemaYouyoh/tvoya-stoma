@@ -1,0 +1,26 @@
+section.beautiful
+  .beautiful__wrapper
+    h2(class=sliderParam.class).beautiful__title!= sliderParam.title 
+    p.beautiful__subtitle!= sliderParam.subtitle 
+
+    .beautiful-slider.swiper
+      .swiper-wrapper
+
+        each item in sliderParam.img
+          .swiper-slide.beautiful-slide
+            .beautiful-slide__img
+                img(src=require(item), alt='beautiful')
+
+      .beautiful-slider-controls
+        button.beautiful-slider-prev
+          <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14.75 15.0767L2.15982 8.5L14.75 1.92334L14.75 15.0767Z" stroke="#E6007E" stroke-width="2"/>
+          </svg>
+
+        .beautiful-slider-pagination pagination
+
+        
+        button.beautiful-slider-next
+          <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.25 1.92334L13.8402 8.5L1.25 15.0767L1.25 1.92334Z" stroke="#E6007E" stroke-width="2"/>
+          </svg>
